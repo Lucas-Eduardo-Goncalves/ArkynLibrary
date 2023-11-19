@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+input,
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--neutral-200);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--neutral-50);
+}
+
+body {
+  background-color: var(--neutral-900);
+}
+
+[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled),
+a:hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-600);
+}

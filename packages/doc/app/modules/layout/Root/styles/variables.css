@@ -1,13 +1,13 @@
 /* FONTS */
 :root {
-  --font-default: "Noto sans", sans-serif;
+  --font-default: "Roboto", sans-serif;
   --font-code: monospace;
 }
 
 /* FONT-COLORS */
 :root {
-  --heading-color: var(--slate-900);
-  --normal-color: var(--slate-400);
+  --heading-color: var(--neutral-50);
+  --normal-color: var(--neutral-200);
 }
 
 /* FONT-SIZE */

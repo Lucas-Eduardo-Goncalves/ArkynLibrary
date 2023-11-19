@@ -1,9 +1,5 @@
-import { Button } from "arkyn_components";
+import { redirect } from "@remix-run/node";
 
-export default function () {
-  return (
-    <div>
-      <Button>Button</Button>
-    </div>
-  );
+export function loader() {
+  return redirect("/v1");
 }

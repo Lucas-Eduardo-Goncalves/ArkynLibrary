@@ -4,15 +4,15 @@
     "packages/*"
   ],
   "scripts": {
-    "all:build": "npm run components:build && npm run tokens:build && npm run utils:build",
-    "all:deploy": "npm run components:deploy && npm run tokens:deploy && npm run utils:deploy",
     "components:build": "cd ./packages/components && npm run build",
     "components:deploy": "cd ./packages/components && npm run deploy",
     "utils:build": "cd ./packages/utils && npm run build",
     "utils:deploy": "cd ./packages/utils && npm run deploy",
     "tokens:build": "cd ./packages/tokens && npm run build",
     "tokens:deploy": "cd ./packages/tokens && npm run deploy",
-    "doc:dev": "cd ./packages/doc && npm run all:build && npm run dev",
+    "pkgs:build": "npm run components:build && npm run tokens:build && npm run utils:build",
+    "pkgs:deploy": "npm run components:deploy && npm run tokens:deploy && npm run utils:deploy",
+    "doc:dev": "cd ./packages/doc && npm run dev",
     "doc:deploy": "cd ./packages/doc && fly deploy"
   }
 }
