@@ -13,7 +13,7 @@ export default defineConfig({
     },
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "@arkyn/components",
+      name: "arkyn_components",
       fileName: "bundle",
     },
   },

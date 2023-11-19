@@ -1,5 +1,5 @@
 {
-  "name": "@arkyn/doc",
+  "name": "arkyn_doc",
   "version": "1.0.0",
   "private": true,
   "sideEffects": false,
@@ -26,7 +26,7 @@
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.38.0",
     "typescript": "^5.1.6",
-    "@arkyn/components": "*"
+    "arkyn_components": "*"
   },
   "engines": {
     "node": ">=18.0.0"
