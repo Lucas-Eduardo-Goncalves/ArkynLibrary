@@ -1,14 +1,14 @@
 {
   "name": "arkyn_components",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "./dist/bundle.js",
   "types": "./dist/index.d.ts",
   "author": "Lucas Gonçalves",
   "type": "module",
   "private": false,
   "scripts": {
-    "build": "npx vite build && tsc",
-    "deploy": "npm version patch && npm publish"
+    "build": "npx vite build && tsc && npm version patch",
+    "deploy": "npm publish"
   },
   "peerDependencies": {
     "@remix-run/react": ">=2.0.1",
