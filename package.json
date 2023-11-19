@@ -7,6 +7,6 @@
     "components:build": "cd ./packages/components && npm run build",
     "components:deploy": "cd ./packages/components && npm run deploy",
     "doc:dev": "cd ./packages/doc && npm run dev",
-    "doc:deploy": "cd ./packages/doc && npm run deploy"
+    "doc:deploy": "cd ./packages/doc && fly deploy"
   }
 }
