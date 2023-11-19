@@ -1,4 +1,4 @@
-import type { ColorScheme } from "../types";
+import type { ColorScheme } from "arkyn_tokens";
 export declare class SwitchModel {
     colorScheme: ColorScheme;
     size: number;

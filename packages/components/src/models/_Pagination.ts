@@ -7,7 +7,7 @@ import type {
   Space,
   Spacing,
   Variant,
-} from "../types";
+} from "arkyn_tokens";
 
 export class PaginationModel {
   colorScheme: ColorScheme;

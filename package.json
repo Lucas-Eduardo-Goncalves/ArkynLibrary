@@ -6,6 +6,10 @@
   "scripts": {
     "components:build": "cd ./packages/components && npm run build",
     "components:deploy": "cd ./packages/components && npm run deploy",
+    "components:typecheck": "cd ./packages/components && tsc",
+    "tokens:build": "cd ./packages/tokens && npm run build",
+    "tokens:deploy": "cd ./packages/tokens && npm run deploy",
+    "tokens:typecheck": "cd ./packages/tokens && tsc",
     "doc:dev": "cd ./packages/doc && npm run dev",
     "doc:deploy": "cd ./packages/doc && fly deploy"
   }

@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import type { ColorScheme, FontSize, FontWeight, Radii, Space, Spacing, Variant } from "../types";
+import type { ColorScheme, FontSize, FontWeight, Radii, Space, Spacing, Variant } from "arkyn_tokens";
 export declare class MultilineModel {
     colorScheme: ColorScheme;
     fontSize: FontSize;

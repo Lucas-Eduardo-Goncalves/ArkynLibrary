@@ -1,5 +1,5 @@
 import type { MouseEvent } from "react";
-import type { ColorScheme, Radii, Size, Space, Variant } from "../types";
+import type { ColorScheme, Radii, Size, Space, Variant } from "arkyn_tokens";
 export declare class CheckboxModel {
     colorScheme: ColorScheme;
     radii: Radii;

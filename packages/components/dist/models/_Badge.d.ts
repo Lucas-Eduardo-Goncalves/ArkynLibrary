@@ -1,4 +1,4 @@
-import type { ColorScheme, FontSize, FontWeight, Radii, Size, Space, Spacing, Variant } from "../types";
+import type { ColorScheme, FontSize, FontWeight, Radii, Size, Space, Spacing, Variant } from "arkyn_tokens";
 export declare class BadgeModel {
     colorScheme: ColorScheme;
     fontSize: FontSize;

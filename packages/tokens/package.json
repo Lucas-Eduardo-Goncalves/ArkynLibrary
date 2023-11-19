@@ -1,0 +1,14 @@
+{
+  "name": "arkyn_tokens",
+  "version": "3.0.0",
+  "main": "./dist/bundle.js",
+  "types": "./dist/index.d.ts",
+  "author": "Lucas Gonçalves",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "build": "npx vite build && tsc",
+    "deploy": "npm version patch && npm publish"
+  },
+  "license": "ISC"
+}
