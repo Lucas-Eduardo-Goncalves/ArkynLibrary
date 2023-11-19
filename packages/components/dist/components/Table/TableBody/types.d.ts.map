@@ -1,0 +1,1 @@
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../../src/components/Table/TableBody/types.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,OAAO,CAAC;AAE5C,MAAM,MAAM,cAAc,GAAG;IAC3B,OAAO,CAAC,EAAE,OAAO,CAAC;CACnB,GAAG,cAAc,CAAC,uBAAuB,CAAC,CAAC"}

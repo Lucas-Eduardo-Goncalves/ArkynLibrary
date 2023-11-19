@@ -1,0 +1,1 @@
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../../src/components/Table/TableTd/types.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,gBAAgB,EAAE,MAAM,OAAO,CAAC;AAEzC,MAAM,MAAM,YAAY,GAAG;IACzB,OAAO,CAAC,EAAE,OAAO,CAAC;IAClB,MAAM,CAAC,EAAE,OAAO,CAAC;CAClB,GAAG,gBAAgB,CAAC,wBAAwB,CAAC,CAAC"}

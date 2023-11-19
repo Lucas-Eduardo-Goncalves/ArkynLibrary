@@ -1,0 +1,1 @@
+{"version":3,"file":"_types.d.ts","sourceRoot":"","sources":["../../../src/hooks/IsBotContext/_types.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,SAAS,EAAE,MAAM,OAAO,CAAC;AAEvC,KAAK,aAAa,GAAG;IACnB,KAAK,EAAE,OAAO,CAAC;IACf,QAAQ,EAAE,SAAS,CAAC;CACrB,CAAC;AAEF,YAAY,EAAE,aAAa,EAAE,CAAC"}

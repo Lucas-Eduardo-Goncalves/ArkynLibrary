@@ -1,0 +1,1 @@
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../src/components/Multiline/types.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,sBAAsB,EAAE,MAAM,OAAO,CAAC;AACpD,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,cAAc,CAAC;AAEnD,MAAM,MAAM,cAAc,GAAG,OAAO,CAAC,cAAc,CAAC,GAClD,IAAI,CAAC,sBAAsB,CAAC,mBAAmB,CAAC,EAAE,WAAW,GAAG,MAAM,CAAC,CAAC"}

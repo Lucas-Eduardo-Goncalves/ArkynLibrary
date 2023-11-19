@@ -1,0 +1,23 @@
+export declare const slateVariants: any;
+export declare const grayVariants: any;
+export declare const zincVariants: any;
+export declare const neutralVariants: any;
+export declare const stoneVariants: any;
+export declare const redVariants: any;
+export declare const orangeVariants: any;
+export declare const amberVariants: any;
+export declare const yellowVariants: any;
+export declare const limeVariants: any;
+export declare const greenVariants: any;
+export declare const emeraldVariants: any;
+export declare const tealVariants: any;
+export declare const cyanVariants: any;
+export declare const skyVariants: any;
+export declare const blueVariants: any;
+export declare const indigoVariants: any;
+export declare const violetVariants: any;
+export declare const purpleVariants: any;
+export declare const fuchsiaVariants: any;
+export declare const pinkVariants: any;
+export declare const roseVariants: any;
+//# sourceMappingURL=variants.d.ts.map

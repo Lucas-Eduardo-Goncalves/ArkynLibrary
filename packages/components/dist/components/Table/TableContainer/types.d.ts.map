@@ -1,0 +1,1 @@
+{"version":3,"file":"types.d.ts","sourceRoot":"","sources":["../../../../src/components/Table/TableContainer/types.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,mBAAmB,EAAE,MAAM,OAAO,CAAC;AAEjD,MAAM,MAAM,mBAAmB,GAAG;IAChC,OAAO,CAAC,EAAE,SAAS,GAAG,MAAM,CAAC;CAC9B,GAAG,mBAAmB,CAAC,gBAAgB,CAAC,CAAC"}
