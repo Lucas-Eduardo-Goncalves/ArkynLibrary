@@ -8,9 +8,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { ArkynProvider } from "arkyn_components";
+import { ArkynProvider } from "@arkyn/components";
 
-import arkynCSS from "arkyn_components/dist/style.css";
+import arkynCSS from "@arkyn/components/dist/style.css";
 import resetCSS from "./styles/reset.css";
 import variablesCSS from "./styles/variables.css";
 

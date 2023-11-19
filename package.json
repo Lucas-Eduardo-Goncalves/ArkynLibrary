@@ -1,13 +1,12 @@
 {
-  "name": "arkyn",
-  "private": "true",
+  "private": true,
   "workspaces": [
-    "packages/remix",
-    "packages/lib"
+    "packages/*"
   ],
   "scripts": {
-    "lib:build": "cd ./packages/lib && npm run build",
-    "remix:dev": "cd ./packages/remix && npm run dev",
-    "remix:build": "cd ./packages/remix && npm run build"
+    "components:build": "cd ./packages/components && npm run build",
+    "components:deploy": "cd ./packages/components && npm run deploy",
+    "doc:dev": "cd ./packages/doc && npm run dev",
+    "doc:deploy": "cd ./packages/doc && npm run deploy"
   }
 }

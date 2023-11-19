@@ -9,13 +9,11 @@ export default defineConfig({
     outDir: "./dist",
     rollupOptions: {
       external: ["@remix-run/react", "react", "react-dom"],
-      output: {
-        format: "esm",
-      },
+      output: { format: "esm" },
     },
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
-      name: "arkyn_components",
+      name: "@arkyn/components",
       fileName: "bundle",
     },
   },

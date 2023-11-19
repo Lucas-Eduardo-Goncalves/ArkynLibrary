@@ -1,4 +1,4 @@
-import { Button } from "arkyn_components";
+import { Button } from "@arkyn/components";
 
 export default function Index() {
   return (
