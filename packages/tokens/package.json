@@ -7,8 +7,8 @@
   "type": "module",
   "private": false,
   "scripts": {
-    "build": "npx vite build && tsc",
-    "deploy": "npm version patch && npm publish"
+    "build": "npx vite build && tsc && npm version patch",
+    "deploy": "npm publish"
   },
   "license": "ISC"
 }
