@@ -1,6 +1,6 @@
 import { Button } from "arkyn_components";
 
-export default function Index() {
+export default function () {
   return (
     <div>
       <Button>Button</Button>
