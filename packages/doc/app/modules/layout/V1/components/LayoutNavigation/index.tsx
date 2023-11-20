@@ -40,10 +40,6 @@ export function LayoutNavigation() {
   return (
     <nav className="layout_navigation">
       <NavigationLink to="/v1" label="Introdução" />
-      <NavigationLink
-        to="/v1/guide-arkyn-components"
-        label="Configurar os componentes"
-      />
 
       <Title
         label="Componentes"
@@ -83,7 +79,7 @@ export function LayoutNavigation() {
       <NavigationLink to="/v1/utils/api" label="api" />
       <NavigationLink to="/v1/utils/api" label="regex" />
       <NavigationLink to="/v1/utils/api" label="badRequest" />
-      <NavigationLink to="/v1/utils/api" label="filterControll" />
+      <NavigationLink to="/v1/utils/api" label="filterControl" />
       <NavigationLink to="/v1/utils/api" label="getScopedParams" />
       <NavigationLink to="/v1/utils/api" label="Authenticator" />
 

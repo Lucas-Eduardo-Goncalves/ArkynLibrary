@@ -1,7 +1,8 @@
-import { V1Client } from "~/modules/layout/V1";
+import { IntroductionClient } from "~/modules/base/Introduction";
 
-export const links = V1Client.links;
+export const links = IntroductionClient.links;
+export const meta = IntroductionClient.meta;
 
 export default function () {
-  return <V1Client.View />;
+  return <IntroductionClient.View />;
 }

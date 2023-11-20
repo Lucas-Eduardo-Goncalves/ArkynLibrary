@@ -7,7 +7,10 @@ export function View() {
       <LayoutHeader />
       <div className="layout_container">
         <LayoutNavigation />
-        <Outlet />
+
+        <main>
+          <Outlet />
+        </main>
       </div>
     </>
   );

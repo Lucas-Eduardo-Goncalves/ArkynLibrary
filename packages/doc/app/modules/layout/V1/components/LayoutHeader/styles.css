@@ -42,7 +42,7 @@
 }
 
 .layout_header > div > .layout_header_links > a:hover {
-  color: var(--violet-400);
+  color: var(--violet-500);
 }
 
 .layout_header > div > .layout_header_social a svg {
@@ -51,5 +51,5 @@
 }
 
 .layout_header > div > .layout_header_social a svg:hover {
-  stroke: var(--violet-400);
+  stroke: var(--violet-500);
 }

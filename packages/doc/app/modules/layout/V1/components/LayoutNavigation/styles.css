@@ -6,6 +6,7 @@
   gap: 4px;
 
   max-width: 250px;
+  min-width: 250px;
   height: calc(100vh - 55px);
   overflow: auto;
 }
@@ -52,7 +53,7 @@
 }
 
 .layout_navigation a.is_activated {
-  color: var(--violet-400);
+  color: var(--violet-500);
   font-weight: 500;
-  background-color: var(--neutral-800);
+  background-color: #8a5cf625;
 }

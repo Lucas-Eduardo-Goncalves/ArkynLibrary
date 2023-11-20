@@ -1,4 +1,15 @@
 .layout_container {
   display: flex;
+}
+
+.layout_container > main {
+  display: flex;
   flex-direction: column;
+
+  overflow: auto;
+  height: calc(100vh - 55px);
+
+  padding: 4rem;
+
+  max-width: calc(100% - 250px);
 }
