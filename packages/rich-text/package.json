@@ -1,0 +1,32 @@
+{
+  "name": "arkyn_rich_text",
+  "version": "1.0.12",
+  "main": "./dist/bundle.js",
+  "types": "./dist/index.d.ts",
+  "author": "Lucas Gonçalves",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "build": "npx vite build && tsc && cp ./src/styles.css ./dist/main.css && npm version patch",
+    "deploy": "npm publish"
+  },
+  "peerDependencies": {
+    "@remix-run/react": ">=2.0.1",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "dependencies": {
+    "draft-js": "^0.11.7",
+    "lucide-react": ">=0.292.0",
+    "slate": "^0.100.0",
+    "slate-react": "^0.101.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.2",
+    "@types/react": "^18.2.37",
+    "@types/react-color": "^3.0.10",
+    "@types/react-dom": "^18.2.15",
+    "typescript": "^5.2.2",
+    "vite": "^4.0.3"
+  }
+}

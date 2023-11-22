@@ -20,7 +20,8 @@
     "react-dom": "^18.2.0",
     "arkyn_components": "*",
     "arkyn_tokens": "*",
-    "arkyn_utils": "*"
+    "arkyn_utils": "*",
+    "arkyn_rich_text": "*"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.3.0",

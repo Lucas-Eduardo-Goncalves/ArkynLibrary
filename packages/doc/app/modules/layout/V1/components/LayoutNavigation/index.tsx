@@ -40,6 +40,7 @@ export function LayoutNavigation() {
   return (
     <nav className="layout_navigation">
       <NavigationLink to="/v1" label="Introdução" />
+      <NavigationLink to="/v1/components/rich-text" label="RichText" />
 
       <Title
         label="Componentes"
