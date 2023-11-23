@@ -1,5 +1,4 @@
-import * as li from "react";
-import Ke from "react";
+import Ke, { useState as li } from "react";
 var ue = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
 function De(e) {
   return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;
@@ -12306,36 +12305,17 @@ Ze.buttonList = void 0;
 var Oi = Di(Je);
 Ze.buttonList = Ii(Be);
 var Fi = Ze.default = Oi.default;
-const Pi = [
-  "Arial",
-  "Comic Sans MS",
-  "Courier New",
-  "Impact",
-  "Georgia",
-  "Tahoma",
-  "Trebuchet MS",
-  "Verdana"
-];
-function Ui() {
-  const [e, t] = li.useState(""), n = [
-    "Logical",
-    "Salesforce Sans",
-    "Garamond",
-    "Sans-Serif",
-    "Serif",
-    "Times New Roman",
-    "Helvetica",
-    ...Pi
-  ].sort();
+function Vi(e) {
+  const [t, n] = li("");
   return /* @__PURE__ */ ai.jsx(
     Fi,
     {
-      setContents: e,
-      onChange: t,
+      setContents: t,
+      onChange: n,
       setOptions: {
         buttonList: [
           ["undo", "redo"],
-          ["font", "fontSize"],
+          [],
           ["bold", "underline", "italic", "strike", "subscript", "superscript"],
           ["fontColor", "hiliteColor"],
           ["align", "list", "lineHeight"],
@@ -12346,12 +12326,12 @@ function Ui() {
         ],
         defaultTag: "div",
         minHeight: "300px",
-        showPathLabel: !1,
-        font: n
-      }
+        showPathLabel: !1
+      },
+      ...e
     }
   );
 }
 export {
-  Ui as RichText
+  Vi as RichText
 };

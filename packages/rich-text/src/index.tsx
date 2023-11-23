@@ -1,30 +1,9 @@
-import * as React from "react";
+import { type FC, useState } from "react";
 import SunEditor from "suneditor-react";
+import { SunEditorReactProps } from "suneditor-react/dist/types/SunEditorReactProps";
 
-const defaultFonts = [
-  "Arial",
-  "Comic Sans MS",
-  "Courier New",
-  "Impact",
-  "Georgia",
-  "Tahoma",
-  "Trebuchet MS",
-  "Verdana",
-];
-
-export function RichText() {
-  const [value, setValue] = React.useState("");
-
-  const sortedFontOptions = [
-    "Logical",
-    "Salesforce Sans",
-    "Garamond",
-    "Sans-Serif",
-    "Serif",
-    "Times New Roman",
-    "Helvetica",
-    ...defaultFonts,
-  ].sort();
+export function RichText(args: Partial<SunEditorReactProps>) {
+  const [value, setValue] = useState("");
 
   return (
     <SunEditor
@@ -33,7 +12,7 @@ export function RichText() {
       setOptions={{
         buttonList: [
           ["undo", "redo"],
-          ["font", "fontSize"],
+          [],
           ["bold", "underline", "italic", "strike", "subscript", "superscript"],
           ["fontColor", "hiliteColor"],
           ["align", "list", "lineHeight"],
@@ -45,8 +24,8 @@ export function RichText() {
         defaultTag: "div",
         minHeight: "300px",
         showPathLabel: false,
-        font: sortedFontOptions,
       }}
+      {...args}
     />
   );
 }
