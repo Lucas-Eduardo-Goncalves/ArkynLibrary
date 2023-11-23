@@ -3,9 +3,9 @@
   height: auto;
   box-sizing: border-box;
   font-family: Helvetica Neue;
-  border: 1px solid #dadada;
-  background-color: #fff;
-  color: #000;
+  border: 1px solid var(--neutral-700);
+  background-color: var(--neutral-800);
+  color: var(--neutral-50);
   user-select: none;
   -o-user-select: none;
   -moz-user-select: none;
@@ -13,11 +13,13 @@
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
 .sun-editor * {
   box-sizing: border-box;
   -webkit-user-drag: none;
   overflow: visible;
 }
+
 .sun-editor-common button,
 .sun-editor-common input,
 .sun-editor-common select,
@@ -25,6 +27,7 @@
   font-size: 14px;
   line-height: 1.5;
 }
+
 .sun-editor-common blockquote,
 .sun-editor-common body,
 .sun-editor-common button,
@@ -56,6 +59,7 @@
   padding: 0;
   border: 0;
 }
+
 .sun-editor-common dl,
 .sun-editor-common li,
 .sun-editor-common menu,
@@ -63,14 +67,17 @@
 .sun-editor-common ul {
   list-style: none !important;
 }
+
 .sun-editor-common hr {
   margin: 6px 0 !important;
 }
+
 .sun-editor textarea {
   resize: none;
   border: 0;
   padding: 0;
 }
+
 .sun-editor button {
   border: 0;
   background-color: transparent;
@@ -78,17 +85,20 @@
   cursor: pointer;
   outline: none;
 }
+
 .sun-editor button,
 .sun-editor input,
 .sun-editor select,
 .sun-editor textarea {
   vertical-align: middle;
 }
+
 .sun-editor button span {
   display: block;
   margin: 0;
   padding: 0;
 }
+
 .sun-editor button .txt {
   display: block;
   margin-top: 0;
@@ -96,15 +106,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .sun-editor button * {
   pointer-events: none;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
 }
+
 .sun-editor svg {
   fill: currentColor;
 }
+
 .sun-editor .se-svg,
 .sun-editor button > svg {
   width: 16px;
@@ -115,16 +128,19 @@
   text-align: center;
   float: none;
 }
+
 .sun-editor .close > svg,
 .sun-editor .se-dialog-close > svg {
   width: 10px;
   height: 10px;
 }
+
 .sun-editor .se-btn-select > svg {
   float: right;
   width: 10px;
   height: 10px;
 }
+
 .sun-editor .se-btn-list > .se-list-icon {
   display: inline-block;
   width: 16px;
@@ -132,10 +148,12 @@
   margin: -1px 10px 0 0;
   vertical-align: middle;
 }
+
 .sun-editor .se-line-breaker > button > svg {
   width: 24px;
   height: 24px;
 }
+
 .sun-editor button > i:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -146,10 +164,12 @@
   font-size: 15px;
   line-height: 2;
 }
+
 .sun-editor button > [class="se-icon-text"] {
   font-size: 20px;
   line-height: 1;
 }
+
 .sun-editor .se-arrow,
 .sun-editor .se-arrow:after {
   position: absolute;
@@ -158,48 +178,53 @@
   height: 0;
   border: 11px solid transparent;
 }
+
 .sun-editor .se-arrow.se-arrow-up {
   top: -11px;
   left: 20px;
   margin-left: -11px;
   border-top-width: 0;
-  border-bottom-color: #dadada;
+  border-bottom-color: red;
 }
+
 .sun-editor .se-arrow.se-arrow-up:after {
   top: 1px;
   margin-left: -11px;
   content: " ";
   border-top-width: 0;
-  border-bottom-color: #fff;
+  border-bottom-color: red;
 }
+
 .sun-editor .se-toolbar .se-arrow.se-arrow-up:after {
-  border-bottom-color: #fafafa;
+  border-bottom-color: red;
 }
 .sun-editor .se-arrow.se-arrow-down {
   top: 0;
   left: 0;
   margin-left: -11px;
   border-bottom-width: 0;
-  border-top-color: #dadada;
+  border-top-color: red;
 }
 .sun-editor .se-arrow.se-arrow-down:after {
   top: -12px;
   margin-left: -11px;
   content: " ";
   border-bottom-width: 0;
-  border-top-color: #fff;
+  border-top-color: red;
 }
 .sun-editor .se-toolbar .se-arrow.se-arrow-down:after {
-  border-top-color: #fafafa;
+  border-top-color: red;
 }
 .sun-editor .se-container {
   position: relative;
   width: 100%;
   height: 100%;
 }
+
 .sun-editor button {
-  color: #000;
+  color: var(--neutral-100);
 }
+
 .sun-editor .se-btn {
   float: left;
   width: 34px;
@@ -211,64 +236,64 @@
   font-size: 12px;
   line-height: 27px;
 }
+
 .sun-editor .se-btn:enabled:focus,
 .sun-editor .se-btn:enabled:hover {
-  background-color: #e1e1e1;
-  border-color: #d1d1d1;
+  background-color: var(--neutral-700);
+  border-color: transparent;
   outline: 0 none;
 }
+
 .sun-editor .se-btn:enabled:active {
-  background-color: #d1d1d1;
-  border-color: #c1c1c1;
-  -webkit-box-shadow: inset 0 3px 5px #c1c1c1;
-  box-shadow: inset 0 3px 5px #c1c1c1;
+  background-color: var(--neutral-700);
 }
+
 .sun-editor .se-btn-primary {
-  color: #000;
-  background-color: #c7deff;
-  border: 1px solid #80bdff;
-  border-radius: 4px;
+  color: var(--white);
+  transition: background-color 0.2s;
+  background-color: var(--violet-400);
 }
+
 .sun-editor .se-btn-primary:focus,
 .sun-editor .se-btn-primary:hover {
-  color: #000;
-  background-color: #80bdff;
-  border-color: #3f9dff;
-  outline: 0 none;
+  color: var(--white);
+  background-color: var(--violet-500);
 }
+
 .sun-editor .se-btn-primary:active {
-  color: #fff;
-  background-color: #3f9dff;
-  border-color: #4592ff;
-  -webkit-box-shadow: inset 0 3px 5px #4592ff;
-  box-shadow: inset 0 3px 5px #4592ff;
+  color: red;
+  background-color: red;
+  border-color: red;
+  -webkit-box-shadow: inset 0 3px 5px red;
+  box-shadow: inset 0 3px 5px red;
 }
+
 .sun-editor input,
 .sun-editor select,
 .sun-editor textarea {
-  color: #000;
-  border: 1px solid #ccc;
+  color: var(--neutral-100);
+  border: 1px solid var(--neutral-700);
   border-radius: 4px;
+  outline: 1px solid transparent;
 }
 .sun-editor input:focus,
 .sun-editor select:focus,
 .sun-editor textarea:focus {
-  border: 1px solid #80bdff;
-  outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem #c7deff;
-  box-shadow: 0 0 0 0.2rem #c7deff;
+  border: 1px solid var(--violet-400);
+  outline-color: var(--violet-400);
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .sun-editor .se-btn:enabled.active {
-  color: #4592ff;
+  color: red;
   outline: 0 none;
 }
 .sun-editor .se-btn:enabled.active:focus,
 .sun-editor .se-btn:enabled.active:hover {
-  background-color: #e1e1e1;
-  border-color: #d1d1d1;
+  background-color: var(--neutral-700);
+  border-color: var(--neutral-700);
   outline: 0 none;
 }
+
 .sun-editor .se-btn:enabled.active:active {
   background-color: #d1d1d1;
   border-color: #c1c1c1;
