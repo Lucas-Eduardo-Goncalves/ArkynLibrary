@@ -1,6 +1,6 @@
 {
   "name": "arkyn_rich_text",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "main": "./dist/bundle.js",
   "types": "./dist/index.d.ts",
   "author": "Lucas Gonçalves",
