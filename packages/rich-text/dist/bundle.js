@@ -12315,13 +12315,12 @@ function Vi(e) {
       setOptions: {
         buttonList: [
           ["undo", "redo"],
-          [],
+          ["formatBlock"],
           ["bold", "underline", "italic", "strike", "subscript", "superscript"],
           ["fontColor", "hiliteColor"],
-          ["align", "list", "lineHeight"],
+          ["align", "list"],
           ["outdent", "indent"],
           ["table", "horizontalRule", "link", "image", "video"],
-          ["preview", "print"],
           ["removeFormat"]
         ],
         defaultTag: "div",
