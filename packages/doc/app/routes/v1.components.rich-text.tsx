@@ -19,7 +19,6 @@ export default function () {
           ["align", "list"],
           ["outdent", "indent"],
           ["table", "horizontalRule", "link", "image", "video"],
-          // ["preview", "print"],
           ["removeFormat"],
         ],
         defaultTag: "div",

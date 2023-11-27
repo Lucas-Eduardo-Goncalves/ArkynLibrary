@@ -12320,8 +12320,7 @@ function Vi(e) {
           ["fontColor", "hiliteColor"],
           ["align", "list"],
           ["outdent", "indent"],
-          ["table", "horizontalRule", "link", "image", "video"],
-          ["removeFormat"]
+          ["table", "horizontalRule", "link", "image", "video"]
         ],
         defaultTag: "div",
         minHeight: "300px",

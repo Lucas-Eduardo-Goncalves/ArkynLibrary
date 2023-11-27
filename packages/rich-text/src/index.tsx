@@ -18,7 +18,6 @@ export function RichText(args: Partial<SunEditorReactProps>) {
           ["align", "list"],
           ["outdent", "indent"],
           ["table", "horizontalRule", "link", "image", "video"],
-          ["removeFormat"],
         ],
         defaultTag: "div",
         minHeight: "300px",
