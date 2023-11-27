@@ -10,6 +10,7 @@ export { Checkbox } from "./Checkbox";
 export { ColorInput } from "./ColorInput";
 export { CurrencyInput } from "./CurrencyInput";
 export { Form } from "./Form";
+export { ImageUploader } from "./ImageUploader";
 export { Input } from "./Input";
 export { MaskedInput } from "./MaskedInput";
 export { Multiline } from "./Multiline";
