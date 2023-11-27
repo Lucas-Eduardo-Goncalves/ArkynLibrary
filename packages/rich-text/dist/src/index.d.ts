@@ -1,3 +1,5 @@
 import { SunEditorReactProps } from "suneditor-react/dist/types/SunEditorReactProps";
-export declare function RichText(args: Partial<SunEditorReactProps>): import("react/jsx-runtime").JSX.Element;
+type RichTextProps = Partial<SunEditorReactProps> & {};
+export declare function RichText(args: RichTextProps): import("react/jsx-runtime").JSX.Element;
+export {};
 //# sourceMappingURL=index.d.ts.map

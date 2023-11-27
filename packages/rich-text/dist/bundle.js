@@ -1,9 +1,9 @@
-import Ke, { useState as li } from "react";
+import Je, { useState as si } from "react";
 var ue = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
 function De(e) {
   return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;
 }
-function _t(e) {
+function bt(e) {
   if (e.__esModule)
     return e;
   var t = e.default;
@@ -24,7 +24,7 @@ function _t(e) {
     });
   }), n;
 }
-var Ye = { exports: {} }, Pe = {};
+var Xe = { exports: {} }, Pe = {};
 /**
  * @license React
  * react-jsx-runtime.production.min.js
@@ -34,12 +34,12 @@ var Ye = { exports: {} }, Pe = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var ut;
-function si() {
-  if (ut)
+var dt;
+function oi() {
+  if (dt)
     return Pe;
-  ut = 1;
-  var e = Ke, t = Symbol.for("react.element"), n = Symbol.for("react.fragment"), o = Object.prototype.hasOwnProperty, l = e.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, c = { key: !0, ref: !0, __self: !0, __source: !0 };
+  dt = 1;
+  var e = Je, t = Symbol.for("react.element"), n = Symbol.for("react.fragment"), o = Object.prototype.hasOwnProperty, l = e.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, c = { key: !0, ref: !0, __self: !0, __source: !0 };
   function d(f, i, _) {
     var r, b = {}, x = null, S = null;
     _ !== void 0 && (x = "" + _), i.key !== void 0 && (x = "" + i.key), i.ref !== void 0 && (S = i.ref);
@@ -62,10 +62,10 @@ var Ve = {};
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var dt;
-function oi() {
-  return dt || (dt = 1, process.env.NODE_ENV !== "production" && function() {
-    var e = Ke, t = Symbol.for("react.element"), n = Symbol.for("react.portal"), o = Symbol.for("react.fragment"), l = Symbol.for("react.strict_mode"), c = Symbol.for("react.profiler"), d = Symbol.for("react.provider"), f = Symbol.for("react.context"), i = Symbol.for("react.forward_ref"), _ = Symbol.for("react.suspense"), r = Symbol.for("react.suspense_list"), b = Symbol.for("react.memo"), x = Symbol.for("react.lazy"), S = Symbol.for("react.offscreen"), B = Symbol.iterator, F = "@@iterator";
+var ft;
+function ai() {
+  return ft || (ft = 1, process.env.NODE_ENV !== "production" && function() {
+    var e = Je, t = Symbol.for("react.element"), n = Symbol.for("react.portal"), o = Symbol.for("react.fragment"), l = Symbol.for("react.strict_mode"), c = Symbol.for("react.profiler"), d = Symbol.for("react.provider"), f = Symbol.for("react.context"), i = Symbol.for("react.forward_ref"), _ = Symbol.for("react.suspense"), r = Symbol.for("react.suspense_list"), b = Symbol.for("react.memo"), x = Symbol.for("react.lazy"), S = Symbol.for("react.offscreen"), B = Symbol.iterator, F = "@@iterator";
     function s(N) {
       if (N === null || typeof N != "object")
         return null;
@@ -303,8 +303,8 @@ function oi() {
       } finally {
         q = !1, j.current = re, U(), Error.prepareStackTrace = ae;
       }
-      var Re = N ? N.displayName || N.name : "", ct = Re ? Y(Re) : "";
-      return typeof N == "function" && Z.set(N, ct), ct;
+      var Re = N ? N.displayName || N.name : "", ut = Re ? Y(Re) : "";
+      return typeof N == "function" && Z.set(N, ut), ut;
     }
     function ne(N, W, X) {
       return K(N, !1);
@@ -433,7 +433,7 @@ function oi() {
         });
       }
     }
-    function jt(N, W) {
+    function Yt(N, W) {
       {
         var X = function() {
           be || (be = !0, u("%s: `ref` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://reactjs.org/link/special-props)", W));
@@ -444,7 +444,7 @@ function oi() {
         });
       }
     }
-    var Yt = function(N, W, X, J, ae, re, le) {
+    var Xt = function(N, W, X, J, ae, re, le) {
       var ie = {
         // This tag allows us to uniquely identify this as a React Element
         $$typeof: t,
@@ -473,7 +473,7 @@ function oi() {
         value: ae
       }), Object.freeze && (Object.freeze(ie.props), Object.freeze(ie)), ie;
     };
-    function Xt(N, W, X, J, ae) {
+    function Gt(N, W, X, J, ae) {
       {
         var re, le = {}, ie = null, ye = null;
         X !== void 0 && (Oe(X), ie = "" + X), Ae(W) && (Oe(W.key), ie = "" + W.key), ze(W) && (ye = W.ref, ke(W, ae));
@@ -486,28 +486,28 @@ function oi() {
         }
         if (ie || ye) {
           var pe = typeof N == "function" ? N.displayName || N.name || "Unknown" : N;
-          ie && Fe(le, pe), ye && jt(le, pe);
+          ie && Fe(le, pe), ye && Yt(le, pe);
         }
-        return Yt(N, ie, ye, ae, J, xe.current, le);
+        return Xt(N, ie, ye, ae, J, xe.current, le);
       }
     }
-    var qe = a.ReactCurrentOwner, nt = a.ReactDebugCurrentFrame;
+    var $e = a.ReactCurrentOwner, lt = a.ReactDebugCurrentFrame;
     function Me(N) {
       if (N) {
         var W = N._owner, X = te(N.type, N._source, W ? W.type : null);
-        nt.setExtraStackFrame(X);
+        lt.setExtraStackFrame(X);
       } else
-        nt.setExtraStackFrame(null);
+        lt.setExtraStackFrame(null);
     }
-    var $e;
-    $e = !1;
-    function je(N) {
+    var je;
+    je = !1;
+    function Ye(N) {
       return typeof N == "object" && N !== null && N.$$typeof === t;
     }
-    function lt() {
+    function st() {
       {
-        if (qe.current) {
-          var N = z(qe.current.type);
+        if ($e.current) {
+          var N = z($e.current.type);
           if (N)
             return `
 
@@ -516,7 +516,7 @@ Check the render method of \`` + N + "`.";
         return "";
       }
     }
-    function Gt(N) {
+    function Kt(N) {
       {
         if (N !== void 0) {
           var W = N.fileName.replace(/^.*[\\\/]/, ""), X = N.lineNumber;
@@ -527,10 +527,10 @@ Check your code at ` + W + ":" + X + ".";
         return "";
       }
     }
-    var st = {};
-    function Kt(N) {
+    var ot = {};
+    function Jt(N) {
       {
-        var W = lt();
+        var W = st();
         if (!W) {
           var X = typeof N == "string" ? N : N.displayName || N.name;
           X && (W = `
@@ -540,39 +540,39 @@ Check the top-level render call using <` + X + ">.");
         return W;
       }
     }
-    function ot(N, W) {
+    function at(N, W) {
       {
         if (!N._store || N._store.validated || N.key != null)
           return;
         N._store.validated = !0;
-        var X = Kt(W);
-        if (st[X])
+        var X = Jt(W);
+        if (ot[X])
           return;
-        st[X] = !0;
+        ot[X] = !0;
         var J = "";
-        N && N._owner && N._owner !== qe.current && (J = " It was passed a child from " + z(N._owner.type) + "."), Me(N), u('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', X, J), Me(null);
+        N && N._owner && N._owner !== $e.current && (J = " It was passed a child from " + z(N._owner.type) + "."), Me(N), u('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', X, J), Me(null);
       }
     }
-    function at(N, W) {
+    function rt(N, W) {
       {
         if (typeof N != "object")
           return;
         if (_e(N))
           for (var X = 0; X < N.length; X++) {
             var J = N[X];
-            je(J) && ot(J, W);
+            Ye(J) && at(J, W);
           }
-        else if (je(N))
+        else if (Ye(N))
           N._store && (N._store.validated = !0);
         else if (N) {
           var ae = s(N);
           if (typeof ae == "function" && ae !== N.entries)
             for (var re = ae.call(N), le; !(le = re.next()).done; )
-              je(le.value) && ot(le.value, W);
+              Ye(le.value) && at(le.value, W);
         }
       }
     }
-    function Jt(N) {
+    function Qt(N) {
       {
         var W = N.type;
         if (W == null || typeof W == "string")
@@ -589,15 +589,15 @@ Check the top-level render call using <` + X + ">.");
         if (X) {
           var J = z(W);
           ce(X, N.props, "prop", J, N);
-        } else if (W.PropTypes !== void 0 && !$e) {
-          $e = !0;
+        } else if (W.PropTypes !== void 0 && !je) {
+          je = !0;
           var ae = z(W);
           u("Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?", ae || "Unknown");
         }
         typeof W.getDefaultProps == "function" && !W.getDefaultProps.isReactClassApproved && u("getDefaultProps is only used on classic React.createClass definitions. Use a static property named `defaultProps` instead.");
       }
     }
-    function Qt(N) {
+    function ei(N) {
       {
         for (var W = Object.keys(N.props), X = 0; X < W.length; X++) {
           var J = W[X];
@@ -609,18 +609,18 @@ Check the top-level render call using <` + X + ">.");
         N.ref !== null && (Me(N), u("Invalid attribute `ref` supplied to `React.Fragment`."), Me(null));
       }
     }
-    function rt(N, W, X, J, ae, re) {
+    function ct(N, W, X, J, ae, re) {
       {
         var le = w(N);
         if (!le) {
           var ie = "";
           (N === void 0 || typeof N == "object" && N !== null && Object.keys(N).length === 0) && (ie += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.");
-          var ye = Gt(ae);
-          ye ? ie += ye : ie += lt();
+          var ye = Kt(ae);
+          ye ? ie += ye : ie += st();
           var ge;
           N === null ? ge = "null" : _e(N) ? ge = "array" : N !== void 0 && N.$$typeof === t ? (ge = "<" + (z(N.type) || "Unknown") + " />", ie = " Did you accidentally export a JSX literal instead of a component?") : ge = typeof N, u("React.jsx: type is invalid -- expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s", ge, ie);
         }
-        var pe = Xt(N, W, X, ae, re);
+        var pe = Gt(N, W, X, ae, re);
         if (pe == null)
           return pe;
         if (le) {
@@ -629,29 +629,29 @@ Check the top-level render call using <` + X + ">.");
             if (J)
               if (_e(Ee)) {
                 for (var Re = 0; Re < Ee.length; Re++)
-                  at(Ee[Re], N);
+                  rt(Ee[Re], N);
                 Object.freeze && Object.freeze(Ee);
               } else
                 u("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
             else
-              at(Ee, N);
+              rt(Ee, N);
         }
-        return N === o ? Qt(pe) : Jt(pe), pe;
+        return N === o ? ei(pe) : Qt(pe), pe;
       }
     }
-    function ei(N, W, X) {
-      return rt(N, W, X, !0);
-    }
     function ti(N, W, X) {
-      return rt(N, W, X, !1);
+      return ct(N, W, X, !0);
     }
-    var ii = ti, ni = ei;
-    Ve.Fragment = o, Ve.jsx = ii, Ve.jsxs = ni;
+    function ii(N, W, X) {
+      return ct(N, W, X, !1);
+    }
+    var ni = ii, li = ti;
+    Ve.Fragment = o, Ve.jsx = ni, Ve.jsxs = li;
   }()), Ve;
 }
-process.env.NODE_ENV === "production" ? Ye.exports = si() : Ye.exports = oi();
-var ai = Ye.exports, Ze = {}, Je = {};
-const bt = {
+process.env.NODE_ENV === "production" ? Xe.exports = oi() : Xe.exports = ai();
+var Ze = Xe.exports, qe = {}, Qe = {};
+const vt = {
   name: "blockquote",
   display: "command",
   add: function(e, t) {
@@ -678,7 +678,7 @@ const bt = {
     const e = this.util.getParentElement(this.getSelectionNode(), "blockquote");
     e ? this.detachRangeFormatElement(e, null, null, !1, !1) : this.applyRangeFormatElement(this.context.blockquote.tag.cloneNode(!1));
   }
-}, vt = {
+}, yt = {
   name: "align",
   display: "submenu",
   add: function(e, t) {
@@ -754,7 +754,7 @@ const bt = {
       this.util.setStyle(l[c], "textAlign", n === o ? "" : n);
     this.effectNode = null, this.submenuOff(), this.focus(), this.history.push(!1);
   }
-}, yt = {
+}, Ct = {
   name: "font",
   display: "submenu",
   add: function(e, t) {
@@ -815,7 +815,7 @@ const bt = {
       this.nodeChange(null, ["font-family"], ["span"], !0);
     this.submenuOff();
   }
-}, Ct = {
+}, wt = {
   name: "fontSize",
   display: "submenu",
   add: function(e, t) {
@@ -870,7 +870,7 @@ const bt = {
       this.nodeChange(null, ["font-size"], ["span"], !0);
     this.submenuOff();
   }
-}, wt = {
+}, xt = {
   name: "colorPicker",
   /**
    * @description Constructor
@@ -1039,11 +1039,11 @@ const bt = {
     });
     return this.util.removeItem(t), n.length >= 3 ? "#" + ((1 << 24) + (n[0] << 16) + (n[1] << 8) + n[2]).toString(16).substr(1) : !1;
   }
-}, xt = {
+}, Et = {
   name: "fontColor",
   display: "submenu",
   add: function(e, t) {
-    e.addModule([wt]);
+    e.addModule([xt]);
     const n = e.context;
     n.fontColor = {
       previewEl: null,
@@ -1087,11 +1087,11 @@ const bt = {
     const t = this.util.createElement("SPAN");
     t.style.color = e, this.nodeChange(t, ["color"], null, null), this.submenuOff();
   }
-}, Et = {
+}, St = {
   name: "hiliteColor",
   display: "submenu",
   add: function(e, t) {
-    e.addModule([wt]);
+    e.addModule([xt]);
     const n = e.context;
     n.hiliteColor = {
       previewEl: null,
@@ -1135,7 +1135,7 @@ const bt = {
     const t = this.util.createElement("SPAN");
     t.style.backgroundColor = e, this.nodeChange(t, ["background-color"], null, null), this.submenuOff();
   }
-}, St = {
+}, Tt = {
   name: "horizontalRule",
   display: "submenu",
   add: function(e, t) {
@@ -1172,7 +1172,7 @@ const bt = {
     const o = this.plugins.horizontalRule.appendHr.call(this, t.firstElementChild);
     o && (this.setRange(o, 0, o, 0), this.submenuOff());
   }
-}, Tt = {
+}, kt = {
   name: "list",
   display: "submenu",
   add: function(e, t) {
@@ -1365,7 +1365,7 @@ const bt = {
     const o = this.plugins.list.editList.call(this, n, null, !1);
     o && this.setRange(o.sc, o.so, o.ec, o.eo), this.submenuOff(), this.history.push(!1);
   }
-}, kt = {
+}, Lt = {
   name: "table",
   display: "submenu",
   add: function(e, t) {
@@ -1908,7 +1908,7 @@ const bt = {
     }
     this.history.push(!1);
   }
-}, Lt = {
+}, Nt = {
   name: "formatBlock",
   display: "submenu",
   add: function(e, t) {
@@ -2010,7 +2010,7 @@ const bt = {
       this.submenuOff();
     }
   }
-}, Nt = {
+}, Bt = {
   name: "lineHeight",
   display: "submenu",
   add: function(e, t) {
@@ -2056,7 +2056,7 @@ const bt = {
       n[o].style.lineHeight = t;
     this.submenuOff(), this.history.push(!1);
   }
-}, Bt = {
+}, zt = {
   name: "template",
   display: "submenu",
   add: function(e, t) {
@@ -2089,7 +2089,7 @@ const bt = {
       throw this.submenuOff(), Error('[SUNEDITOR.template.fail] cause : "templates[i].html not found"');
     this.submenuOff();
   }
-}, zt = {
+}, At = {
   name: "paragraphStyle",
   display: "submenu",
   add: function(e, t) {
@@ -2155,7 +2155,7 @@ const bt = {
       l(o[c], n);
     this.submenuOff(), this.history.push(!1);
   }
-}, At = {
+}, Mt = {
   name: "textStyle",
   display: "submenu",
   add: function(e, t) {
@@ -2240,7 +2240,7 @@ const bt = {
     this.nodeChange(d, l, f, !0), this.submenuOff();
   }
 };
-var Mt = { exports: {} };
+var Rt = { exports: {} };
 (function(e) {
   (function(t, n) {
     e.exports = t.document ? n(t, !0) : function(o) {
@@ -2322,8 +2322,8 @@ var Mt = { exports: {} };
       value: o
     })), o;
   });
-})(Mt);
-var ri = Mt.exports;
+})(Rt);
+var ri = Rt.exports;
 const We = /* @__PURE__ */ De(ri), ci = {
   name: "selectMenu",
   add: function(e) {
@@ -2386,7 +2386,7 @@ const We = /* @__PURE__ */ De(ri), ci = {
   init: function(e) {
     e && (e.items = [], e.menus = [], e.index = -1, e.item = null, e.callerName = "", this.context.selectMenu.callerContext = null);
   }
-}, Rt = {
+}, Ht = {
   name: "anchor",
   add: function(e) {
     e.addModule([ci]), e.context.anchor = {
@@ -2564,11 +2564,11 @@ const We = /* @__PURE__ */ De(ri), ci = {
   init: function(e) {
     e.linkAnchor = null, e.linkValue = e.preview.textContent = e.urlInput.value = "", e.anchorText.value = "", e.newWindowCheck.checked = !1, e.downloadCheck.checked = !1, e._change = !1, this.plugins.anchor.setRel.call(this, e, e.defaultRel), e.relList && this.plugins.anchor.toggleRelList.call(this, e, !1), this.context.anchor.callerContext = null, this.plugins.selectMenu.init.call(this, this.context.selectMenu.callerContext);
   }
-}, Ht = {
+}, It = {
   name: "link",
   display: "dialog",
   add: function(e) {
-    e.addModule([We, Rt]);
+    e.addModule([We, Ht]);
     const t = e.context, n = t.link = {
       focusElement: null,
       // @Override dialog // This element has focus when the dialog is opened.
@@ -2668,7 +2668,7 @@ const We = /* @__PURE__ */ De(ri), ci = {
     this.context.link.linkController.style.display = "none", this.plugins.anchor.init.call(this, this.context.anchor.caller.link);
   }
 };
-var It = { exports: {} };
+var Dt = { exports: {} };
 (function(e) {
   (function(t, n) {
     e.exports = t.document ? n(t, !0) : function(o) {
@@ -2718,10 +2718,10 @@ var It = { exports: {} };
       value: o
     })), o;
   });
-})(It);
-var ui = It.exports;
-const Qe = /* @__PURE__ */ De(ui);
-var Dt = { exports: {} };
+})(Dt);
+var ui = Dt.exports;
+const et = /* @__PURE__ */ De(ui);
+var Ot = { exports: {} };
 (function(e) {
   (function(t, n) {
     e.exports = t.document ? n(t, !0) : function(o) {
@@ -3129,10 +3129,10 @@ var Dt = { exports: {} };
       value: o
     })), o;
   });
-})(Dt);
-var di = Dt.exports;
-const Ot = /* @__PURE__ */ De(di);
-var Ft = { exports: {} };
+})(Ot);
+var di = Ot.exports;
+const Ft = /* @__PURE__ */ De(di);
+var Pt = { exports: {} };
 (function(e) {
   (function(t, n) {
     e.exports = t.document ? n(t, !0) : function(o) {
@@ -3326,13 +3326,13 @@ var Ft = { exports: {} };
       value: o
     })), o;
   });
-})(Ft);
-var fi = Ft.exports;
-const et = /* @__PURE__ */ De(fi), Pt = {
+})(Pt);
+var fi = Pt.exports;
+const tt = /* @__PURE__ */ De(fi), Vt = {
   name: "image",
   display: "dialog",
   add: function(e) {
-    e.addModule([We, Rt, Qe, Ot, et]);
+    e.addModule([We, Ht, et, Ft, tt]);
     const t = e.options, n = e.context, o = n.image = {
       _infoList: [],
       // @Override fileManager
@@ -3774,11 +3774,11 @@ const et = /* @__PURE__ */ De(fi), Pt = {
     const e = this.context.image;
     e.imgInputFile && (e.imgInputFile.value = ""), e.imgUrlFile && (e._v_src._linkValue = e.previewSrc.textContent = e.imgUrlFile.value = ""), e.imgInputFile && e.imgUrlFile && (e.imgUrlFile.removeAttribute("disabled"), e.previewSrc.style.textDecoration = ""), e.altText.value = "", e.modal.querySelector('input[name="suneditor_image_radio"][value="none"]').checked = !0, e.captionCheckEl.checked = !1, e._element = null, this.plugins.image.openTab.call(this, "init"), e._resizing && (e.inputX.value = this.options.imageWidth === e._defaultSizeX ? "" : this.options.imageWidth, e.inputY.value = this.options.imageHeight === e._defaultSizeY ? "" : this.options.imageHeight, e.proportion.checked = !0, e._ratio = !1, e._ratioX = 1, e._ratioY = 1), this.plugins.anchor.init.call(this, e.anchorCtx);
   }
-}, Vt = {
+}, Ut = {
   name: "video",
   display: "dialog",
   add: function(e) {
-    e.addModule([We, Qe, Ot, et]);
+    e.addModule([We, et, Ft, tt]);
     const t = e.options, n = e.context, o = n.video = {
       _infoList: [],
       // @Override fileManager
@@ -4217,11 +4217,11 @@ const et = /* @__PURE__ */ De(fi), Pt = {
     const e = this.context.video;
     e.videoInputFile && (e.videoInputFile.value = ""), e.videoUrlFile && (e._linkValue = e.preview.textContent = e.videoUrlFile.value = ""), e.videoInputFile && e.videoUrlFile && (e.videoUrlFile.removeAttribute("disabled"), e.preview.style.textDecoration = ""), e._origin_w = this.options.videoWidth, e._origin_h = this.options.videoHeight, e.modal.querySelector('input[name="suneditor_video_radio"][value="none"]').checked = !0, e._resizing && (e.inputX.value = this.options.videoWidth === e._defaultSizeX ? "" : this.options.videoWidth, e.inputY.value = this.options.videoHeight === e._defaultSizeY ? "" : this.options.videoHeight, e.proportion.checked = !0, e.proportion.disabled = !0, this.plugins.video.setVideoRatioSelect.call(this, e._defaultRatio));
   }
-}, Ut = {
+}, Wt = {
   name: "audio",
   display: "dialog",
   add: function(e) {
-    e.addModule([We, Qe, et]);
+    e.addModule([We, et, tt]);
     const t = e.context, n = t.audio = {
       _infoList: [],
       // @Override fileManager
@@ -4508,7 +4508,7 @@ const et = /* @__PURE__ */ De(fi), Pt = {
     const e = this.context.audio;
     e.audioInputFile && (e.audioInputFile.value = ""), e.audioUrlFile && (e._linkValue = e.preview.textContent = e.audioUrlFile.value = ""), e.audioInputFile && e.audioUrlFile && (e.audioUrlFile.removeAttribute("disabled"), e.preview.style.textDecoration = ""), e._element = null;
   }
-}, ft = "https://katex.org/docs/supported.html", Wt = {
+}, ht = "https://katex.org/docs/supported.html", Zt = {
   name: "math",
   display: "dialog",
   add: function(e) {
@@ -4534,7 +4534,7 @@ const et = /* @__PURE__ */ De(fi), Pt = {
     const t = e.lang, n = e.util.createElement("DIV"), o = e.options.mathFontSize;
     let l = o[0].value;
     n.className = "se-dialog-content", n.style.display = "none";
-    let c = '<form><div class="se-dialog-header"><button type="button" data-command="close" class="se-btn se-dialog-close" title="' + t.dialogBox.close + '" aria-label="' + t.dialogBox.close + '">' + e.icons.cancel + '</button><span class="se-modal-title">' + t.dialogBox.mathBox.title + '</span></div><div class="se-dialog-body"><div class="se-dialog-form"><label>' + t.dialogBox.mathBox.inputLabel + ' (<a href="' + ft + '" target="_blank">KaTeX</a>)</label><textarea class="se-input-form se-math-exp" type="text"></textarea></div><div class="se-dialog-form"><label>' + t.dialogBox.mathBox.fontSizeLabel + '</label><select class="se-input-select se-math-size">';
+    let c = '<form><div class="se-dialog-header"><button type="button" data-command="close" class="se-btn se-dialog-close" title="' + t.dialogBox.close + '" aria-label="' + t.dialogBox.close + '">' + e.icons.cancel + '</button><span class="se-modal-title">' + t.dialogBox.mathBox.title + '</span></div><div class="se-dialog-body"><div class="se-dialog-form"><label>' + t.dialogBox.mathBox.inputLabel + ' (<a href="' + ht + '" target="_blank">KaTeX</a>)</label><textarea class="se-input-form se-math-exp" type="text"></textarea></div><div class="se-dialog-form"><label>' + t.dialogBox.mathBox.fontSizeLabel + '</label><select class="se-input-select se-math-size">';
     for (let d = 0, f = o.length, i; d < f; d++)
       i = o[d], i.default && (l = i.value), c += '<option value="' + i.value + '"' + (i.default ? " selected" : "") + ">" + i.text + "</option>";
     return c += '</select></div><div class="se-dialog-form"><label>' + t.dialogBox.mathBox.previewLabel + '</label><p class="se-math-preview"></p></div></div><div class="se-dialog-footer"><button type="submit" class="se-btn-primary" title="' + t.dialogBox.submitButton + '" aria-label="' + t.dialogBox.submitButton + '"><span>' + t.dialogBox.submitButton + "</span></button></div></form>", e.context.math.defaultFontSize = l, n.innerHTML = c, n;
@@ -4569,7 +4569,7 @@ const et = /* @__PURE__ */ De(fi), Pt = {
     try {
       this.util.removeClass(this.context.math.focusElement, "se-error"), t = this.options.katex.src.renderToString(e, { throwOnError: !0, displayMode: !0 });
     } catch (n) {
-      this.util.addClass(this.context.math.focusElement, "se-error"), t = '<span class="se-math-katex-error">Katex syntax error. (Refer <a href="' + ft + '" target="_blank">KaTeX</a>)</span>', console.warn("[SUNEDITOR.math.Katex.error] ", n);
+      this.util.addClass(this.context.math.focusElement, "se-error"), t = '<span class="se-math-katex-error">Katex syntax error. (Refer <a href="' + ht + '" target="_blank">KaTeX</a>)</span>', console.warn("[SUNEDITOR.math.Katex.error] ", n);
     }
     return t;
   },
@@ -4642,7 +4642,7 @@ const et = /* @__PURE__ */ De(fi), Pt = {
     e.mathController.style.display = "none", e._mathExp = null, e.focusElement.value = "", e.previewElement.innerHTML = "";
   }
 };
-var Zt = { exports: {} };
+var qt = { exports: {} };
 (function(e) {
   (function(t, n) {
     e.exports = t.document ? n(t, !0) : function(o) {
@@ -4814,9 +4814,9 @@ var Zt = { exports: {} };
       value: o
     })), o;
   });
-})(Zt);
-var hi = Zt.exports;
-const gi = /* @__PURE__ */ De(hi), qt = {
+})(qt);
+var hi = qt.exports;
+const gi = /* @__PURE__ */ De(hi), $t = {
   name: "imageGallery",
   /**
    * @description Constructor
@@ -4868,30 +4868,30 @@ const gi = /* @__PURE__ */ De(hi), qt = {
       this.plugins.image.create_image.call(this, e.getAttribute("data-value"), null, this.context.image._origin_w, this.context.image._origin_h, "none", n, e.alt);
     }).bind(this), null);
   }
-}, pi = { blockquote: bt, align: vt, font: yt, fontSize: Ct, fontColor: xt, hiliteColor: Et, horizontalRule: St, list: Tt, table: kt, formatBlock: Lt, lineHeight: Nt, template: Bt, paragraphStyle: zt, textStyle: At, link: Ht, image: Pt, video: Vt, audio: Ut, math: Wt, imageGallery: qt }, mi = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+}, pi = { blockquote: vt, align: yt, font: Ct, fontSize: wt, fontColor: Et, hiliteColor: St, horizontalRule: Tt, list: kt, table: Lt, formatBlock: Nt, lineHeight: Bt, template: zt, paragraphStyle: At, textStyle: Mt, link: It, image: Vt, video: Ut, audio: Wt, math: Zt, imageGallery: $t }, mi = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  align: vt,
-  audio: Ut,
-  blockquote: bt,
+  align: yt,
+  audio: Wt,
+  blockquote: vt,
   default: pi,
-  font: yt,
-  fontColor: xt,
-  fontSize: Ct,
-  formatBlock: Lt,
-  hiliteColor: Et,
-  horizontalRule: St,
-  image: Pt,
-  imageGallery: qt,
-  lineHeight: Nt,
-  link: Ht,
-  list: Tt,
-  math: Wt,
-  paragraphStyle: zt,
-  table: kt,
-  template: Bt,
-  textStyle: At,
-  video: Vt
-}, Symbol.toStringTag, { value: "Module" })), _i = /* @__PURE__ */ _t(mi), ht = {
+  font: Ct,
+  fontColor: Et,
+  fontSize: wt,
+  formatBlock: Nt,
+  hiliteColor: St,
+  horizontalRule: Tt,
+  image: Vt,
+  imageGallery: $t,
+  lineHeight: Bt,
+  link: It,
+  list: kt,
+  math: Zt,
+  paragraphStyle: At,
+  table: Lt,
+  template: zt,
+  textStyle: Mt,
+  video: Ut
+}, Symbol.toStringTag, { value: "Module" })), _i = /* @__PURE__ */ bt(mi), gt = {
   // rtl icon
   rtl: {
     italic: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.5 15.8" xml:space="preserve"><g><path d="M0.3,0.1c0.3,0,0.5,0,0.7,0c1,0.1,1.7,0.1,2.2,0.1H4L7.2,0l0.2,1.1H7c-0.5,0-1,0.1-1.5,0.3v0.4l0.3,1.9L6,4.4L6.3,6 l0.1,0.4l0.1,0.5c0.1,0.2,0.1,0.4,0.2,0.7s0.1,0.6,0.2,0.9L7,9.1l0.6,2.8l0.3,1.4c0.1,0.4,0.2,0.7,0.4,1c0.4,0.2,0.8,0.3,1.2,0.4 l0.8,0.2l0.2,0.9l-1.1,0c-0.9-0.1-1.5-0.1-1.8-0.1h-2c-0.9,0.1-1.4,0.2-1.5,0.2c-0.1,0-0.2,0-0.3,0H3.4c-0.1,0-0.2,0-0.2,0 l-0.1-0.4c0-0.2-0.1-0.4-0.1-0.6l0.7-0.1c0.4,0,0.8-0.1,1.2-0.2c0-0.1,0-0.2,0-0.3l-0.1-0.5l-0.4-2.4L4,9.6L3.4,6.4 C3.2,5.7,3,4.7,2.7,3.3c0-0.3-0.1-0.5-0.1-0.8C2.5,2.1,2.4,1.9,2.3,1.6C2,1.4,1.6,1.3,1.3,1.2C0.9,1.2,0.5,1.1,0.2,0.9L0,0.4L0,0 L0.3,0.1L0.3,0.1z"/></g></svg>',
@@ -4985,7 +4985,7 @@ const gi = /* @__PURE__ */ De(hi), qt = {
   magic_stick: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.73 15.75"><g><path d="M19.86,19.21a1,1,0,0,0,.28-.68,1,1,0,0,0-.28-.7L13,10.93a1,1,0,0,0-.7-.28,1,1,0,0,0-.68,1.65l6.9,6.9a1,1,0,0,0,.69.29.93.93,0,0,0,.69-.28ZM9.19,8.55a3,3,0,0,0,1.68,0,14.12,14.12,0,0,0,1.41-.32A11.26,11.26,0,0,0,10.8,7.06c-.56-.36-.86-.56-.91-.58S10,5.91,10,5.11s0-1.26-.15-1.37a4.35,4.35,0,0,0-1.19.71c-.53.4-.81.62-.87.68a9,9,0,0,0-2-.6,6.84,6.84,0,0,0-.76-.09s0,.27.08.77a8.6,8.6,0,0,0,.61,2q-.09.09-.69.87a3.59,3.59,0,0,0-.68,1.17c.12.17.57.23,1.36.15S7,9.26,7.15,9.23s.21.36.57.91a10.49,10.49,0,0,0,1.14,1.48c0-.1.14-.57.31-1.4a3,3,0,0,0,0-1.67Z" transform="translate(-4.41 -3.74)"/></g></svg>',
   empty_file: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.78 15.75"><g><path d="M14.73,3.76,18.67,7.7v9.84a2,2,0,0,1-2,2H7.84a1.89,1.89,0,0,1-1.38-.58,2,2,0,0,1-.57-1.39V5.73a1.93,1.93,0,0,1,.57-1.38,2,2,0,0,1,1.38-.58h6.62l.26,0v0Zm2.95,4.92h-2a1.93,1.93,0,0,1-1.38-.57,2,2,0,0,1-.58-1.4V6.17c0-.36,0-.84,0-1.43H7.85a1,1,0,0,0-.7.29,1,1,0,0,0-.29.7V17.54a1,1,0,0,0,.29.69,1,1,0,0,0,.69.29h8.85a1,1,0,0,0,.71-.29.92.92,0,0,0,.28-.69Zm0-1L14.73,4.74v2A1,1,0,0,0,15,7.4a1,1,0,0,0,.69.29Z" transform="translate(-5.89 -3.76)"/></g></svg>'
 };
-var $t = { exports: {} };
+var jt = { exports: {} };
 (function(e) {
   (function(t, n) {
     e.exports = t.document ? n(t, !0) : function(o) {
@@ -5150,8 +5150,8 @@ var $t = { exports: {} };
       value: o
     })), o;
   });
-})($t);
-var bi = $t.exports;
+})(jt);
+var bi = jt.exports;
 const vi = /* @__PURE__ */ De(bi), He = {
   _d: null,
   _w: null,
@@ -6608,7 +6608,7 @@ const vi = /* @__PURE__ */ De(bi), He = {
 body{height: min-content; overflow: hidden;}
 </style>` : "");
   }
-}, Q = He, Xe = {
+}, Q = He, Ge = {
   /**
    * @description document create
    * @param {Element} element Textarea
@@ -6839,7 +6839,7 @@ body{height: min-content; overflow: hidden;}
       ["outdent", "indent"],
       ["fullScreen", "showBlocks", "codeView"],
       ["preview", "print"]
-    ], t.rtl && (t.buttonList = t.buttonList.reverse()), t.icons = !t.icons || typeof t.icons != "object" ? ht : [ht, t.icons].reduce(function(c, d) {
+    ], t.rtl && (t.buttonList = t.buttonList.reverse()), t.icons = !t.icons || typeof t.icons != "object" ? gt : [gt, t.icons].reduce(function(c, d) {
       for (let f in d)
         Q.hasOwn(d, f) && (c[f] = d[f]);
       return c;
@@ -7087,7 +7087,7 @@ body{height: min-content; overflow: hidden;}
     options: n,
     option: n
   };
-}, Ge = yi;
+}, Ke = yi;
 function Ci(e, t) {
   const n = e._w, o = e.util, l = e.options.historyStackDelayTime;
   let c = e.context.element, d = e.context.tool.undo, f = e.context.tool.redo, i = null, _ = 0, r = [];
@@ -7199,7 +7199,7 @@ function Ci(e, t) {
     }
   };
 }
-const gt = {
+const pt = {
   name: "notice",
   /**
    * @description Constructor
@@ -7281,7 +7281,7 @@ function wi(e, t, n, o, l, c) {
     /**
      * @description Notice object
      */
-    notice: gt,
+    notice: pt,
     /**
      * @description Default icons object
      */
@@ -10382,7 +10382,7 @@ function wi(e, t, n, o, l, c) {
             A.push("." + H.className), this.managedTagsInfo.map[H.className] = H.method.bind(this);
           }
         }
-      this.managedTagsInfo.query = A.toString(), this._fileManager.queryString = this._fileManager.tags.join(","), this._fileManager.regExp = new u("^(" + (this._fileManager.tags.join("|") || "^") + ")$", "i"), this._fileManager.pluginRegExp = new u("^(" + (O.length === 0 ? "^" : O.join("|")) + ")$", "i"), this._variable._originCssText = e.element.topArea.style.cssText, this._placeholder = e.element.placeholder, this._lineBreaker = e.element.lineBreaker, this._lineBreakerButton = this._lineBreaker.querySelector("button"), this.history = Ci(this, this._onChange_historyStack.bind(this)), this.addModule([gt]), l.iframe && (this._wd = e.element.wysiwygFrame.contentDocument, e.element.wysiwyg = this._wd.body, l._editorStyles.editor && (e.element.wysiwyg.style.cssText = l._editorStyles.editor), l.height === "auto" && (this._iframeAuto = this._wd.body)), this._initWysiwygArea(s, a);
+      this.managedTagsInfo.query = A.toString(), this._fileManager.queryString = this._fileManager.tags.join(","), this._fileManager.regExp = new u("^(" + (this._fileManager.tags.join("|") || "^") + ")$", "i"), this._fileManager.pluginRegExp = new u("^(" + (O.length === 0 ? "^" : O.join("|")) + ")$", "i"), this._variable._originCssText = e.element.topArea.style.cssText, this._placeholder = e.element.placeholder, this._lineBreaker = e.element.lineBreaker, this._lineBreakerButton = this._lineBreaker.querySelector("button"), this.history = Ci(this, this._onChange_historyStack.bind(this)), this.addModule([pt]), l.iframe && (this._wd = e.element.wysiwygFrame.contentDocument, e.element.wysiwyg = this._wd.body, l._editorStyles.editor && (e.element.wysiwyg.style.cssText = l._editorStyles.editor), l.height === "auto" && (this._iframeAuto = this._wd.body)), this._initWysiwygArea(s, a);
     },
     /**
      * @description Caching basic buttons to use
@@ -10496,7 +10496,7 @@ function wi(e, t, n, o, l, c) {
      * @private
      */
     _setOptionsInit: function(s, a) {
-      this.context = e = Ge(s.originElement, this._getConstructed(s), l), this._componentsInfoReset = !0, this._editorInit(!0, a);
+      this.context = e = Ke(s.originElement, this._getConstructed(s), l), this._componentsInfoReset = !0, this._editorInit(!0, a);
     },
     /**
      * @description Initializ editor
@@ -11730,9 +11730,9 @@ function wi(e, t, n, o, l, c) {
      */
     setToolbarButtons: function(s) {
       r.submenuOff(), r.containerOff(), r.moreLayerOff();
-      const a = Xe._createToolBar(d, s, r.plugins, l);
+      const a = Ge._createToolBar(d, s, r.plugins, l);
       c = a.responsiveButtons, b._setResponsiveToolbar(), e.element.toolbar.replaceChild(a._buttonTray, e.element._buttonTray);
-      const u = Ge(e.element.originElement, r._getConstructed(e.element), l);
+      const u = Ke(e.element.originElement, r._getConstructed(e.element), l);
       e.element = u.element, e.tool = u.tool, l.iframe && (e.element.wysiwyg = r._wd.body), r._recoverButtonStates(), r._cachingButtons(), r.history._resetCachingButton(), r.effectNode = null, r.hasFocus && b._applyTagEffects(), r.isReadOnly && i.setDisabledButtons(!0, r.resizingDisabledButtons), typeof x.onSetToolbarButtons == "function" && x.onSetToolbarButtons(a._buttonTray.querySelectorAll("button"), r);
     },
     /**
@@ -11756,7 +11756,7 @@ function wi(e, t, n, o, l, c) {
             } else
               m[y] = p[y];
         return m;
-      }, {}), u = e.element, h = u.wysiwyg.innerHTML, g = Xe._setOptions(a, e, l);
+      }, {}), u = e.element, h = u.wysiwyg.innerHTML, g = Ge._setOptions(a, e, l);
       g.callButtons && (t = g.callButtons, r.initPlugins = {}), g.plugins && (r.plugins = n = g.plugins), u._menuTray.children.length === 0 && (this._menuTray = {}), c = g.toolbar.responsiveButtons, r.options = l = a, r.lang = o = l.lang, l.iframe && u.wysiwygFrame.addEventListener("load", function() {
         i._setIframeDocument(this, l), r._setOptionsInit(u, h);
       }), u.editorArea.appendChild(u.wysiwygFrame), l.iframe || r._setOptionsInit(u, h);
@@ -12104,20 +12104,20 @@ const xi = {
     const o = typeof e == "string" ? document.getElementById(e) : e;
     if (!o)
       throw Error(typeof e == "string" ? '[SUNEDITOR.create.fail] The element for that id was not found (ID:"' + e + '")' : "[SUNEDITOR.create.fail] suneditor requires textarea's element or id value");
-    const l = Xe.init(o, t);
+    const l = Ge.init(o, t);
     if (l.constructed._top.id && document.getElementById(l.constructed._top.id))
       throw Error('[SUNEDITOR.create.fail] The ID of the suneditor you are trying to create already exists (ID:"' + l.constructed._top.id + '")');
-    return wi(Ge(o, l.constructed, l.options), l.pluginCallButtons, l.plugins, l.options.lang, t, l._responsiveButtons);
+    return wi(Ke(o, l.constructed, l.options), l.pluginCallButtons, l.plugins, l.options.lang, t, l._responsiveButtons);
   }
 }, Ei = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: xi
-}, Symbol.toStringTag, { value: "Module" })), Si = /* @__PURE__ */ _t(Ei);
+}, Symbol.toStringTag, { value: "Module" })), Si = /* @__PURE__ */ bt(Ei);
 function Ti(e) {
   throw new Error('Could not dynamically require "' + e + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
 }
-var tt = {};
-Object.defineProperty(tt, "__esModule", { value: !0 });
+var it = {};
+Object.defineProperty(it, "__esModule", { value: !0 });
 var ki = function(e) {
   switch (typeof e) {
     case "object":
@@ -12128,7 +12128,7 @@ var ki = function(e) {
       return;
   }
 };
-tt.default = ki;
+it.default = ki;
 var Ie = {};
 Object.defineProperty(Ie, "__esModule", { value: !0 });
 Ie.uploadBeforeEvents = Ie.events = void 0;
@@ -12192,26 +12192,26 @@ var Ue = ue && ue.__assign || function() {
     for (var n in e)
       n !== "default" && Object.prototype.hasOwnProperty.call(e, n) && Li(t, e, n);
   return Ni(t, e), t;
-}, it = ue && ue.__importDefault || function(e) {
+}, nt = ue && ue.__importDefault || function(e) {
   return e && e.__esModule ? e : { default: e };
 };
-Object.defineProperty(Je, "__esModule", { value: !0 });
-var Se = Bi(Ke), zi = it(_i), Ai = it(Si), pt = it(tt), mt = Ie, Mi = function(e) {
+Object.defineProperty(Qe, "__esModule", { value: !0 });
+var Se = Bi(Je), zi = nt(_i), Ai = nt(Si), mt = nt(it), _t = Ie, Mi = function(e) {
   var t = e.name, n = e.lang, o = e.setOptions, l = o === void 0 ? {} : o, c = e.placeholder, d = e.width, f = d === void 0 ? "100%" : d, i = e.height, _ = e.defaultValue, r = e.setContents, b = e.setDefaultStyle, x = e.getSunEditorInstance, S = e.appendContents, B = e.setAllPlugins, F = B === void 0 ? !0 : B, s = e.disable, a = s === void 0 ? !1 : s, u = e.readOnly, h = u === void 0 ? !1 : u, g = e.hide, m = g === void 0 ? !1 : g, p = e.hideToolbar, y = p === void 0 ? !1 : p, C = e.disableToolbar, v = C === void 0 ? !1 : C, w = e.onChange, E = e.autoFocus, k = e.onBlur, z = e.onLoad, A = (0, Se.useRef)(null), O = (0, Se.useRef)(null), P = (0, Se.useRef)(!0);
   return (0, Se.useEffect)(function() {
-    var V, T = Ue(Ue({}, l), { lang: n ? (0, pt.default)(n) : l.lang, width: f ?? l.width, placeholder: c ?? l.placeholder, plugins: (V = l.plugins) !== null && V !== void 0 ? V : F ? zi.default : void 0, height: i ?? l.height, value: _ ?? l.value, defaultStyle: b ?? l.defaultStyle });
+    var V, T = Ue(Ue({}, l), { lang: n ? (0, mt.default)(n) : l.lang, width: f ?? l.width, placeholder: c ?? l.placeholder, plugins: (V = l.plugins) !== null && V !== void 0 ? V : F ? zi.default : void 0, height: i ?? l.height, value: _ ?? l.value, defaultStyle: b ?? l.defaultStyle });
     return t && T.value && (A.current.value = T.value), O.current = Ai.default.create(A.current, T), x && x(O.current), O.current.onload = function(H, I) {
       return I || (r && (O.current.setContents(r), O.current.core.focusEdge(null)), S && O.current.appendContents(S), O.current.util.isIE && O.current.core._createDefaultRange(), a && O.current.disable(), h && O.current.readOnly(!0), m && O.current.hide(), y && O.current.toolbar.hide(), v && O.current.toolbar.disable(), E === !1 ? O.current.core.context.element.wysiwyg.blur() : E && O.current.core.context.element.wysiwyg.focus()), z == null ? void 0 : z(I);
     }, O.current.onChange = function(H) {
       t && A.current && (A.current.value = H), w && w(H);
     }, k && (O.current.onBlur = function(H) {
       return k(H, O.current.getContents(!0));
-    }), mt.uploadBeforeEvents.forEach(function(H) {
+    }), _t.uploadBeforeEvents.forEach(function(H) {
       var I = e[H];
       O.current && I && (O.current[H] = function(L, D, R, M) {
         return I(L, D, M);
       });
-    }), mt.events.forEach(function(H) {
+    }), _t.events.forEach(function(H) {
       var I = e[H];
       I && O.current && (O.current[H] = I);
     }), function() {
@@ -12220,7 +12220,7 @@ var Se = Bi(Ke), zi = it(_i), Ai = it(Si), pt = it(tt), mt = Ie, Mi = function(e
   }, []), (0, Se.useEffect)(function() {
     var V;
     P.current || (V = O.current) === null || V === void 0 || V.setOptions({
-      lang: (0, pt.default)(n)
+      lang: (0, mt.default)(n)
     });
   }, [n]), (0, Se.useEffect)(function() {
     var V;
@@ -12245,7 +12245,7 @@ var Se = Bi(Ke), zi = it(_i), Ai = it(Si), pt = it(tt), mt = Ie, Mi = function(e
     P.current = !1;
   }, []), Se.default.createElement("textarea", Ue({ style: { visibility: "hidden" }, ref: A }, { name: t }));
 };
-Je.default = Mi;
+Qe.default = Mi;
 var Be = {};
 Object.defineProperty(Be, "__esModule", { value: !0 });
 Be.formatting = Be.complex = Be.basic = void 0;
@@ -12300,35 +12300,45 @@ var Ri = ue && ue.__createBinding || (Object.create ? function(e, t, n, o) {
 }, Di = ue && ue.__importDefault || function(e) {
   return e && e.__esModule ? e : { default: e };
 };
-Object.defineProperty(Ze, "__esModule", { value: !0 });
-Ze.buttonList = void 0;
-var Oi = Di(Je);
-Ze.buttonList = Ii(Be);
-var Fi = Ze.default = Oi.default;
+Object.defineProperty(qe, "__esModule", { value: !0 });
+qe.buttonList = void 0;
+var Oi = Di(Qe);
+qe.buttonList = Ii(Be);
+var Fi = qe.default = Oi.default;
 function Vi(e) {
-  const [t, n] = li("");
-  return /* @__PURE__ */ ai.jsx(
-    Fi,
-    {
-      setContents: t,
-      onChange: n,
-      setOptions: {
-        buttonList: [
-          ["undo", "redo"],
-          ["formatBlock"],
-          ["bold", "underline", "italic", "strike", "subscript", "superscript"],
-          ["fontColor", "hiliteColor"],
-          ["align", "list"],
-          ["outdent", "indent"],
-          ["table", "horizontalRule", "link", "image", "video"]
-        ],
-        defaultTag: "div",
-        minHeight: "300px",
-        showPathLabel: !1
-      },
-      ...e
-    }
-  );
+  const { name: t, ...n } = e, [o, l] = si("");
+  return /* @__PURE__ */ Ze.jsxs(Ze.Fragment, { children: [
+    /* @__PURE__ */ Ze.jsx("input", { type: "hidden", value: o, name: t }),
+    /* @__PURE__ */ Ze.jsx(
+      Fi,
+      {
+        setContents: o,
+        onChange: l,
+        setOptions: {
+          buttonList: [
+            ["undo", "redo"],
+            ["formatBlock"],
+            [
+              "bold",
+              "underline",
+              "italic",
+              "strike",
+              "subscript",
+              "superscript"
+            ],
+            ["fontColor", "hiliteColor"],
+            ["align", "list"],
+            ["outdent", "indent"],
+            ["table", "horizontalRule", "link", "image", "video"]
+          ],
+          defaultTag: "div",
+          minHeight: "300px",
+          showPathLabel: !1
+        },
+        ...n
+      }
+    )
+  ] });
 }
 export {
   Vi as RichText
