@@ -67,7 +67,7 @@ export function ImageUploader(args: ImageUploaderProps) {
         accept="image/*"
         onChange={handleFileInputChange}
         style={{ display: "none" }}
-        id="fileInput"
+        id={`id_${name}`}
         name={name}
       />
 
@@ -86,17 +86,17 @@ export function ImageUploader(args: ImageUploaderProps) {
         {!selectedImage && (
           <>
             <Icons.Image size={iconSize} color={iconColor} />
-            <label htmlFor="fileInput">
+            <label htmlFor={`id_${name}`}>
               <div
                 className={button_container({
                   colorScheme,
                   fontSize,
                   fontWeight,
                   radii,
-                  size,
+                  size: "sm",
                   space,
                   spacing,
-                  variant,
+                  variant: "ghost",
                 })}
                 style={{ background: bg, ...style }}
                 {...rest}
@@ -119,14 +119,14 @@ export function ImageUploader(args: ImageUploaderProps) {
             <div
               style={{ position: "absolute", right: "10px", bottom: "10px" }}
             >
-              <label htmlFor="fileInput">
+              <label htmlFor={`id_${name}`}>
                 <div
                   className={button_container({
                     colorScheme,
                     fontSize,
                     fontWeight,
                     radii,
-                    size,
+                    size: "sm",
                     space,
                     spacing,
                     variant: "outline",

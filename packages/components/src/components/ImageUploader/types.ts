@@ -10,7 +10,7 @@ export type ImageUploaderProps = Omit<
   "isLoading" | "iconSize"
 > &
   Omit<HTMLAttributes<HTMLDivElement>, "className" | "children"> & {
-    name?: string;
+    name: string;
     uploadUrl: string;
     imageSize?: { w: number; h: number };
 

@@ -27,27 +27,27 @@ export function ImageUploader(args) {
     const handleDragOver = (event) => {
         event.preventDefault();
     };
-    return (_jsxs("div", { children: [_jsx("input", { type: "file", accept: "image/*", onChange: handleFileInputChange, style: { display: "none" }, id: "fileInput", name: name }), _jsxs("div", { className: container, onDrop: handleDrop, onDragOver: handleDragOver, style: {
+    return (_jsxs("div", { children: [_jsx("input", { type: "file", accept: "image/*", onChange: handleFileInputChange, style: { display: "none" }, id: `id_${name}`, name: name }), _jsxs("div", { className: container, onDrop: handleDrop, onDragOver: handleDragOver, style: {
                     position: "relative",
                     width: imageSize.w,
                     height: imageSize.h,
                     border: `2px dashed ${borderColor}`,
                     borderRadius: "5px",
-                }, children: [!selectedImage && (_jsxs(_Fragment, { children: [_jsx(Icons.Image, { size: iconSize, color: iconColor }), _jsx("label", { htmlFor: "fileInput", children: _jsx("div", { className: button_container({
+                }, children: [!selectedImage && (_jsxs(_Fragment, { children: [_jsx(Icons.Image, { size: iconSize, color: iconColor }), _jsx("label", { htmlFor: `id_${name}`, children: _jsx("div", { className: button_container({
                                         colorScheme,
                                         fontSize,
                                         fontWeight,
                                         radii,
-                                        size,
+                                        size: "sm",
                                         space,
                                         spacing,
-                                        variant,
-                                    }), style: { background: bg, ...style }, ...rest, children: buttonText }) }), _jsx("p", { children: dragText })] })), selectedImage && (_jsxs(_Fragment, { children: [_jsx("img", { src: selectedImage, alt: "Imagem selecionada", style: { maxWidth: "100%", maxHeight: "100%" } }), _jsx("div", { style: { position: "absolute", right: "10px", bottom: "10px" }, children: _jsx("label", { htmlFor: "fileInput", children: _jsxs("div", { className: button_container({
+                                        variant: "ghost",
+                                    }), style: { background: bg, ...style }, ...rest, children: buttonText }) }), _jsx("p", { children: dragText })] })), selectedImage && (_jsxs(_Fragment, { children: [_jsx("img", { src: selectedImage, alt: "Imagem selecionada", style: { maxWidth: "100%", maxHeight: "100%" } }), _jsx("div", { style: { position: "absolute", right: "10px", bottom: "10px" }, children: _jsx("label", { htmlFor: `id_${name}`, children: _jsxs("div", { className: button_container({
                                             colorScheme,
                                             fontSize,
                                             fontWeight,
                                             radii,
-                                            size,
+                                            size: "sm",
                                             space,
                                             spacing,
                                             variant: "outline",

@@ -23,7 +23,6 @@ export function Input(props: InputProps) {
     space,
     spacing,
     variant,
-    disabled,
     iconStrokeWidth,
     name,
     children,

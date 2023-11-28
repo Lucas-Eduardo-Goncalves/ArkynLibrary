@@ -1,7 +1,7 @@
 import type { ChangeEventHandler, DragEventHandler, HTMLAttributes } from "react";
 import { ButtonModel } from "../../models";
 export type ImageUploaderProps = Omit<Partial<ButtonModel>, "isLoading" | "iconSize"> & Omit<HTMLAttributes<HTMLDivElement>, "className" | "children"> & {
-    name?: string;
+    name: string;
     uploadUrl: string;
     imageSize?: {
         w: number;
