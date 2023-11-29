@@ -44,7 +44,7 @@ export function ImageUploader(args) {
                                         space,
                                         spacing,
                                         variant: "ghost",
-                                    }), style: { background: bg, ...style }, ...rest, children: buttonText }) }), _jsx("p", { children: dragText })] })), selectedImage && (_jsxs(_Fragment, { children: [_jsx("img", { src: selectedImage, alt: "Imagem selecionada", style: { maxWidth: "100%", maxHeight: "100%" } }), _jsx("div", { style: { position: "absolute", right: "10px", bottom: "10px" }, children: _jsx("label", { htmlFor: `id_${name}`, children: _jsxs("div", { className: button_container({
+                                    }), style: { background: bg, ...style }, children: buttonText }) }), _jsx("p", { children: dragText })] })), selectedImage && (_jsxs(_Fragment, { children: [_jsx("img", { src: selectedImage, alt: "Imagem selecionada", style: { maxWidth: "100%", maxHeight: "100%" } }), _jsx("div", { style: { position: "absolute", right: "10px", bottom: "10px" }, children: _jsx("label", { htmlFor: `id_${name}`, children: _jsxs("div", { className: button_container({
                                             colorScheme,
                                             fontSize,
                                             fontWeight,

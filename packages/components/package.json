@@ -1,6 +1,6 @@
 {
   "name": "arkyn_components",
-  "version": "3.0.17",
+  "version": "3.0.18",
   "main": "./dist/bundle.js",
   "types": "./dist/index.d.ts",
   "author": "Lucas Gonçalves",

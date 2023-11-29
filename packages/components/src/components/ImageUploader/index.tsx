@@ -101,7 +101,6 @@ export function ImageUploader(args: ImageUploaderProps) {
                   variant: "ghost",
                 })}
                 style={{ background: bg, ...style }}
-                {...rest}
               >
                 {buttonText}
               </div>

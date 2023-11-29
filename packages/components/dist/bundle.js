@@ -31389,7 +31389,6 @@ function Rte(e) {
                   variant: "ghost"
                 }),
                 style: { background: n, ...y },
-                ...f,
                 children: b
               }
             ) }),
