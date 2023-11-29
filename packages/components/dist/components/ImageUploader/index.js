@@ -29,8 +29,10 @@ export function ImageUploader(args) {
     };
     return (_jsxs("div", { children: [_jsx("input", { type: "file", accept: "image/*", onChange: handleFileInputChange, style: { display: "none" }, id: `id_${name}`, name: name }), _jsxs("div", { className: container, onDrop: handleDrop, onDragOver: handleDragOver, style: {
                     position: "relative",
-                    width: imageSize.w,
-                    height: imageSize.h,
+                    minWidth: imageSize.w,
+                    minHeight: imageSize.h,
+                    maxWidth: imageSize.w,
+                    maxHeight: imageSize.h,
                     border: `2px dashed ${borderColor}`,
                     borderRadius: "5px",
                 }, children: [!selectedImage && (_jsxs(_Fragment, { children: [_jsx(Icons.Image, { size: iconSize, color: iconColor }), _jsx("label", { htmlFor: `id_${name}`, children: _jsx("div", { className: button_container({

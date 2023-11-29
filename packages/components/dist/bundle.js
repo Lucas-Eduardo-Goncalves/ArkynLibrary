@@ -31365,8 +31365,10 @@ function Rte(e) {
         onDragOver: le,
         style: {
           position: "relative",
-          width: j.w,
-          height: j.h,
+          minWidth: j.w,
+          minHeight: j.h,
+          maxWidth: j.w,
+          maxHeight: j.h,
           border: `2px dashed ${x}`,
           borderRadius: "5px"
         },
