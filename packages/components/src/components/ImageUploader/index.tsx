@@ -80,7 +80,6 @@ export function ImageUploader(args: ImageUploaderProps) {
           minWidth: imageSize.w,
           minHeight: imageSize.h,
           maxWidth: imageSize.w,
-          maxHeight: imageSize.h,
           border: `2px dashed ${borderColor}`,
           borderRadius: "5px",
         }}

@@ -32,7 +32,6 @@ export function ImageUploader(args) {
                     minWidth: imageSize.w,
                     minHeight: imageSize.h,
                     maxWidth: imageSize.w,
-                    maxHeight: imageSize.h,
                     border: `2px dashed ${borderColor}`,
                     borderRadius: "5px",
                 }, children: [!selectedImage && (_jsxs(_Fragment, { children: [_jsx(Icons.Image, { size: iconSize, color: iconColor }), _jsx("label", { htmlFor: `id_${name}`, children: _jsx("div", { className: button_container({
