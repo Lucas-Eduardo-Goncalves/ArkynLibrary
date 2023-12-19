@@ -9,7 +9,7 @@ export function CurrencyInput(props) {
     const { input } = useArkyn();
     const { onKeyDown, valueDisplay } = currencyFormatter;
     const defaultProps = { ...input, ...props };
-    const { colorScheme, bg, iconSize, iconColor, icon: Icon, fontSize, fontWeight, radii, size, space, spacing, variant, disabled, value: forcedValue, onChange, defaultValue, iconStrokeWidth, name, max = 100000000, children, style, id, ...rest } = defaultProps;
+    const { colorScheme, bg, iconSize, readOnly, iconColor, icon: Icon, fontSize, fontWeight, radii, size, space, spacing, variant, disabled, value: forcedValue, onChange, defaultValue, iconStrokeWidth, name, max = 100000000, children, style, id, ...rest } = defaultProps;
     const [isFocused, setIsFocused] = useState(false);
     const [value, setValue] = useState(defaultValue || 0);
     const { id: inputId, inputRef } = useFormController();
@@ -29,6 +29,8 @@ export function CurrencyInput(props) {
             inputRef.current.focus();
     }
     function handleKeyDown(event) {
+        if (readOnly || disabled)
+            return null;
         onKeyDown(event, value, setValue, max);
     }
     return (_jsxs("div", { onClick: handleFocus, className: styles.group({ radii, size, space, spacing, variant }), style: {

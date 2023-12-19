@@ -11,23 +11,22 @@ export function Switch(props: SwitchProps) {
 
   const {
     size,
-    checked: forcedChecked,
+    checked: forcedChecked = undefined,
     onCheck,
     colorScheme,
     defaultChecked,
     name,
   } = defaultProps;
 
-  const [isChecked, setIsChecked] = useState(defaultChecked || false);
+  const [isChecked, setIsChecked] = useState(
+    forcedChecked ?? defaultChecked ?? false
+  );
   const [gradientLeftColor, setGradientLeftColor] = useState(() => {
     if (isChecked) return `var(--${colorScheme}-500)`;
     return "var(--slate-200)";
   });
 
-  const checked =
-    typeof forcedChecked !== "undefined" ? forcedChecked : isChecked;
-
-  const css = generateCSS({ gradientLeftColor, isChecked: checked, size });
+  const css = generateCSS({ gradientLeftColor, isChecked, size });
 
   function handleCheck(e: MouseEvent<HTMLButtonElement>) {
     setIsChecked((old) => {
@@ -41,7 +40,7 @@ export function Switch(props: SwitchProps) {
 
   return (
     <>
-      <input type="hidden" name={name} value={String(checked)} />
+      <input type="hidden" name={name} value={String(isChecked)} />
       <button type="button" style={css.container} onClick={handleCheck}>
         <motion.div
           initial={css.background_animation}

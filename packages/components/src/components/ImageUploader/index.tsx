@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { ImageUploaderProps } from "./types";
 import { useArkyn } from "../../hooks";
 
 import { container } from "./styles.css";
 import { container as button_container } from "../Button/styles.css";
 import { Icons } from "../..";
+import { Form, useActionData } from "@remix-run/react";
+import { useFormController } from "../Form/FormController";
 
 export function ImageUploader(args: ImageUploaderProps) {
   const { button } = useArkyn();
@@ -20,7 +22,9 @@ export function ImageUploader(args: ImageUploaderProps) {
     space,
     spacing,
     variant,
+    responseFileName = "file_url",
     style,
+    uploadUrl,
     ...rest
   } = { ...args, ...button };
 
@@ -35,90 +39,88 @@ export function ImageUploader(args: ImageUploaderProps) {
     name = "file",
     iconSize = 40,
     iconColor = "var(--neutral-500)",
+    defaultValue,
   } = args;
 
-  const [selectedImage, setSelectedImage] = useState(null);
+  const { inputRef } = useFormController();
 
-  const handleFileInputChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [selectedImage, setSelectedImage] = useState(defaultValue || null);
+  const [imageValue, setImageValue] = useState(defaultValue || null);
+
+  async function submitForcedForm(form: HTMLFormElement) {
+    const formData = new FormData(form);
+
+    await fetch(form.action, {
+      method: form.method,
+      body: formData,
+    })
+      .then(async (response) => {
+        return await response.json();
+      })
+      .then((response) => {
+        setImageValue(response[responseFileName]);
+      });
+  }
+
+  const handleChange = (file: File) => {
+    if (formRef.current) {
       setSelectedImage(URL.createObjectURL(file));
-      onChange(event);
+      submitForcedForm(formRef.current);
     }
   };
 
-  const handleDrop = (event) => {
-    event.preventDefault();
-    const file = event.dataTransfer.files[0];
-    if (file) {
-      setSelectedImage(URL.createObjectURL(file));
-      onDrop(event);
-    }
-  };
-
-  const handleDragOver = (event) => {
-    event.preventDefault();
-  };
+  const actionData = useActionData<any>();
+  const borderError = !actionData?.fieldErrors?.[name]
+    ? `2px dashed ${borderColor}`
+    : "2px dashed var(--red-600)";
 
   return (
-    <div>
+    <>
       <input
-        type="file"
-        accept="image/*"
-        onChange={handleFileInputChange}
-        style={{ display: "none" }}
-        id={`id_${name}`}
         name={name}
+        ref={inputRef}
+        type="hidden"
+        readOnly
+        value={imageValue || ""}
       />
 
-      <div
-        className={container}
-        onDrop={handleDrop}
-        onDragOver={handleDragOver}
-        style={{
-          position: "relative",
-          minWidth: imageSize.w,
-          minHeight: imageSize.h,
-          maxWidth: imageSize.w,
-          border: `2px dashed ${borderColor}`,
-          borderRadius: "5px",
-        }}
+      <Form
+        method="POST"
+        encType="multipart/form-data"
+        action={uploadUrl}
+        ref={formRef}
       >
-        {!selectedImage && (
-          <>
-            <Icons.Image size={iconSize} color={iconColor} />
-            <label htmlFor={`id_${name}`}>
-              <div
-                className={button_container({
-                  colorScheme,
-                  fontSize,
-                  fontWeight,
-                  radii,
-                  size: "sm",
-                  space,
-                  spacing,
-                  variant: "ghost",
-                })}
-                style={{ background: bg, ...style }}
-              >
-                {buttonText}
-              </div>
-            </label>
-            <p>{dragText}</p>
-          </>
-        )}
-
-        {selectedImage && (
-          <>
-            <img
-              src={selectedImage}
-              alt="Imagem selecionada"
-              style={{ maxWidth: "100%", maxHeight: "100%" }}
-            />
-
-            <div
-              style={{ position: "absolute", right: "10px", bottom: "10px" }}
-            >
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => {
+            onChange(e);
+            e.target.files && handleChange(e.target.files[0]);
+          }}
+          style={{ display: "none" }}
+          id={`id_${name}`}
+          name="file"
+        />
+        <div
+          className={container}
+          onDrop={(e) => {
+            e.preventDefault();
+            e.dataTransfer.files && handleChange(e.dataTransfer.files[0]);
+            onDrop(e);
+          }}
+          style={{
+            position: "relative",
+            minWidth: imageSize.w,
+            minHeight: imageSize.h,
+            maxWidth: imageSize.w,
+            border: borderError,
+            borderRadius: "5px",
+          }}
+        >
+          {!selectedImage && (
+            <>
+              <Icons.Image size={iconSize} color={iconColor} />
               <label htmlFor={`id_${name}`}>
                 <div
                   className={button_container({
@@ -129,22 +131,55 @@ export function ImageUploader(args: ImageUploaderProps) {
                     size: "sm",
                     space,
                     spacing,
-                    variant: "outline",
+                    variant: "ghost",
                   })}
                   style={{ background: bg, ...style }}
-                  {...rest}
                 >
-                  <Icons.RefreshCw
-                    size={16}
-                    color={`var(--${colorScheme}-500)`}
-                  />
-                  {changeImageButtonText}
+                  {buttonText}
                 </div>
               </label>
-            </div>
-          </>
-        )}
-      </div>
-    </div>
+              <p>{dragText}</p>
+            </>
+          )}
+
+          {selectedImage && (
+            <>
+              <img
+                src={selectedImage}
+                alt="Imagem selecionada"
+                style={{ maxWidth: "100%", maxHeight: "100%" }}
+              />
+
+              <div
+                style={{ position: "absolute", right: "10px", bottom: "10px" }}
+              >
+                <label htmlFor={`id_${name}`}>
+                  <div
+                    className={button_container({
+                      colorScheme,
+                      fontSize,
+                      fontWeight,
+                      radii,
+                      size: "sm",
+                      space,
+                      spacing,
+                      variant: "outline",
+                    })}
+                    style={{ background: bg, ...style }}
+                    {...rest}
+                  >
+                    <Icons.RefreshCw
+                      size={16}
+                      color={`var(--${colorScheme}-500)`}
+                    />
+                    {changeImageButtonText}
+                  </div>
+                </label>
+              </div>
+            </>
+          )}
+        </div>
+      </Form>
+    </>
   );
 }

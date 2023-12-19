@@ -17,6 +17,7 @@ export function CurrencyInput(props: CurrencyInputProps) {
     colorScheme,
     bg,
     iconSize,
+    readOnly,
     iconColor,
     icon: Icon,
     fontSize,
@@ -62,6 +63,7 @@ export function CurrencyInput(props: CurrencyInputProps) {
   }
 
   function handleKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+    if (readOnly || disabled) return null;
     onKeyDown(event, value, setValue, max);
   }
 

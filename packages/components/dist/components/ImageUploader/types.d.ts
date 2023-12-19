@@ -8,11 +8,13 @@ export type ImageUploaderProps = Omit<Partial<ButtonModel>, "isLoading" | "iconS
         h: number;
     };
     borderColor?: string;
+    defaultValue?: string;
     buttonText?: string;
     changeImageButtonText?: string;
     dragText?: string;
     iconSize?: number;
     iconColor?: string;
+    responseFileName?: string;
     onDrop?: (event: DragEventHandler<HTMLDivElement>) => void;
     onChange?: (event: ChangeEventHandler<HTMLInputElement>) => void;
 };

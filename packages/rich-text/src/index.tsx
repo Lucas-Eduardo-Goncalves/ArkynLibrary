@@ -5,8 +5,8 @@ import { SunEditorReactProps } from "suneditor-react/dist/types/SunEditorReactPr
 type RichTextProps = Partial<SunEditorReactProps> & {};
 
 export function RichText(args: RichTextProps) {
-  const { name, ...rest } = args;
-  const [value, setValue] = useState("");
+  const { name, defaultValue, ...rest } = args;
+  const [value, setValue] = useState(defaultValue || "");
 
   return (
     <>

@@ -12306,14 +12306,14 @@ var Oi = Di(Qe);
 qe.buttonList = Ii(Be);
 var Fi = qe.default = Oi.default;
 function Vi(e) {
-  const { name: t, ...n } = e, [o, l] = si("");
+  const { name: t, defaultValue: n, ...o } = e, [l, c] = si(n || "");
   return /* @__PURE__ */ Ze.jsxs(Ze.Fragment, { children: [
-    /* @__PURE__ */ Ze.jsx("input", { type: "hidden", value: o, name: t }),
+    /* @__PURE__ */ Ze.jsx("input", { type: "hidden", value: l, name: t }),
     /* @__PURE__ */ Ze.jsx(
       Fi,
       {
-        setContents: o,
-        onChange: l,
+        setContents: l,
+        onChange: c,
         setOptions: {
           buttonList: [
             ["undo", "redo"],
@@ -12335,7 +12335,7 @@ function Vi(e) {
           minHeight: "300px",
           showPathLabel: !1
         },
-        ...n
+        ...o
       }
     )
   ] });
