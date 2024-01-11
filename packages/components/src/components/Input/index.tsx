@@ -64,7 +64,16 @@ export function Input(props: InputProps) {
       }}
     >
       {Icon && (
-        <Icon size={iconSize} strokeWidth={iconStrokeWidth} color={colorIcon} />
+        <Icon
+          style={{
+            minWidth: iconSize,
+            maxWidth: iconSize,
+            minHeight: iconSize,
+            maxHeight: iconSize,
+          }}
+          strokeWidth={iconStrokeWidth}
+          color={colorIcon}
+        />
       )}
 
       <input

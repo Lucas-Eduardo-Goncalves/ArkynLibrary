@@ -1,7 +1,12 @@
+import { Select } from "arkyn_components";
+
 export function View() {
   return (
     <>
       <h1>Arkyn</h1>
+
+      <Select options={[{ label: "1", value: "1" }]} />
+
       <p>
         Arkyn é um conjunto de bibliotecas elaborado com o propósito específico
         de simplificar e padronizar a produção de websites no contexto do

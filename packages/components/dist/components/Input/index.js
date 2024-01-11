@@ -30,5 +30,10 @@ export function Input(props) {
             outline: borderError,
             background: bg || undefined,
             ...style,
-        }, children: [Icon && (_jsx(Icon, { size: iconSize, strokeWidth: iconStrokeWidth, color: colorIcon })), _jsx("input", { ref: inputRef, onFocus: () => setIsFocused(true), onBlur: () => setIsFocused(false), name: name, id: id || inputId, className: styles.container({ fontSize, fontWeight }), ...rest })] }));
+        }, children: [Icon && (_jsx(Icon, { style: {
+                    minWidth: iconSize,
+                    maxWidth: iconSize,
+                    minHeight: iconSize,
+                    maxHeight: iconSize,
+                }, strokeWidth: iconStrokeWidth, color: colorIcon })), _jsx("input", { ref: inputRef, onFocus: () => setIsFocused(true), onBlur: () => setIsFocused(false), name: name, id: id || inputId, className: styles.container({ fontSize, fontWeight }), ...rest })] }));
 }

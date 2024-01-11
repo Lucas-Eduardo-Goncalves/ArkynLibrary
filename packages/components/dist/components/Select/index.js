@@ -2,7 +2,7 @@ import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-run
 import { useActionData } from "@remix-run/react";
 import { motion } from "framer-motion";
 import { ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Text } from "../Text";
 import { useFormController } from "../Form/FormController";
 import * as styles from "./styles.css";
@@ -12,6 +12,7 @@ export function Select(props) {
     const [selectValue, setSelectValue] = useState(String(value) || String(defaultValue));
     const [searchValue, setSearchValue] = useState("");
     const { id: inputId, inputRef } = useFormController();
+    const ref = useRef(null);
     const actionData = useActionData();
     const borderError = isFocused
         ? `2px solid var(--${colorScheme}-600)`
@@ -24,8 +25,12 @@ export function Select(props) {
             ? " var(--red-600)"
             : iconColor;
     function handleFocus() {
-        if (inputRef?.current)
-            inputRef.current.focus();
+        if (ref?.current) {
+            if (!isFocused)
+                ref.current.focus();
+            if (isFocused)
+                ref.current.blur();
+        }
     }
     function itemExists(value) {
         if (!searchValue)
@@ -42,12 +47,12 @@ export function Select(props) {
             position: "relative",
             flex: 1,
             ...containerStyle,
-        }, children: [_jsxs("div", { onClick: handleFocus, className: styles.group({ radii, size, space, spacing, variant }), style: {
+        }, children: [_jsxs("div", { className: styles.group({ radii, size, space, spacing, variant }), style: {
                     borderColor: borderError ? "transparent" : undefined,
                     outline: borderError,
                     background: bg || undefined,
                     ...style,
-                }, children: [Icon && (_jsx(Icon, { size: iconSize, strokeWidth: iconStrokeWidth, color: colorIcon })), _jsx("input", { ref: inputRef, onFocus: () => setIsFocused(true), readOnly: !isSearchable, onBlur: () => {
+                }, children: [Icon && (_jsx(Icon, { size: iconSize, strokeWidth: iconStrokeWidth, color: colorIcon })), _jsx("input", { ref: ref, onFocus: () => setIsFocused(true), readOnly: !isSearchable, onBlur: () => {
                             setSearchValue("");
                             onSearch && onSearch("");
                             setTimeout(() => {
@@ -62,7 +67,7 @@ export function Select(props) {
                                 ?.label || "", placeholder: isFocused
                             ? options.find((option) => String(option.value) === selectValue)
                                 ?.label || placeholder
-                            : searchValue || placeholder, id: id || inputId, className: styles.container({ fontSize, fontWeight }), ...rest }), _jsx("input", { ref: inputRef, type: "hidden", name: name, value: selectValue }), _jsx(motion.div, { style: { display: "flex", alignItems: "center" }, initial: { rotate: 0 }, animate: { rotate: isFocused ? 180 : 0 }, children: _jsx(ChevronUp, { style: { minWidth: "16px", minHeight: "16px" }, color: "var(--normal-color)" }) })] }), isFocused && (_jsx("ul", { style: {
+                            : searchValue || placeholder, id: id || inputId, className: styles.container({ fontSize, fontWeight }), ...rest }), _jsx("input", { ref: inputRef, type: "hidden", name: name, value: selectValue }), _jsx(motion.div, { onClick: handleFocus, style: { display: "flex", alignItems: "center" }, initial: { rotate: 0 }, animate: { rotate: isFocused ? 180 : 0 }, children: _jsx(ChevronUp, { style: { minWidth: "16px", minHeight: "16px" }, color: "var(--normal-color)" }) })] }), isFocused && (_jsx("ul", { style: {
                     display: "flex",
                     flexDirection: "column",
                     position: "absolute",
@@ -89,8 +94,8 @@ export function Select(props) {
                                 ? "none"
                                 : "1px solid var(--slate-300)",
                         }, onClick: () => {
-                            setSelectValue(String(option.value));
-                            onSelected(String(option.value));
+                            setSelectValue && setSelectValue(String(option?.value));
+                            onSelected && onSelected(String(option?.value));
                         }, children: _jsx(Text, { as: "p", children: option.label }) }, option.label + option.value + index));
                 }) }))] }));
 }

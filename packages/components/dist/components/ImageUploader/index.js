@@ -25,7 +25,8 @@ export function ImageUploader(args) {
         })
             .then((response) => {
             setImageValue(response[responseFileName]);
-        });
+        })
+            .catch((err) => console.log(err));
     }
     const handleChange = (file) => {
         if (formRef.current) {

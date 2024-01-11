@@ -60,7 +60,8 @@ export function ImageUploader(args: ImageUploaderProps) {
       })
       .then((response) => {
         setImageValue(response[responseFileName]);
-      });
+      })
+      .catch((err) => console.log(err));
   }
 
   const handleChange = (file: File) => {

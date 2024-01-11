@@ -64,5 +64,10 @@ export function CpfCnpj(props) {
             outline: borderError,
             background: bg || undefined,
             ...style,
-        }, children: [Icon && (_jsx(Icon, { size: iconSize, strokeWidth: iconStrokeWidth, color: colorIcon })), _jsx("input", { value: value, onChange: onLocalChange, onFocus: () => setIsFocused(true), onBlur: () => setIsFocused(false), name: name, id: id || inputId, className: styles.container({ fontSize, fontWeight }), ref: inputRef, ...rest })] }));
+        }, children: [Icon && (_jsx(Icon, { style: {
+                    minWidth: iconSize,
+                    maxWidth: iconSize,
+                    minHeight: iconSize,
+                    maxHeight: iconSize,
+                }, strokeWidth: iconStrokeWidth, color: colorIcon })), _jsx("input", { value: value, onChange: onLocalChange, onFocus: () => setIsFocused(true), onBlur: () => setIsFocused(false), name: name, id: id || inputId, className: styles.container({ fontSize, fontWeight }), ref: inputRef, ...rest })] }));
 }

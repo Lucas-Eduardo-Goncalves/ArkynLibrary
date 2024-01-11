@@ -66,7 +66,16 @@ export function Simple(props: SimpleInput) {
       }}
     >
       {Icon && (
-        <Icon size={iconSize} strokeWidth={iconStrokeWidth} color={colorIcon} />
+        <Icon
+          style={{
+            minWidth: iconSize,
+            maxWidth: iconSize,
+            minHeight: iconSize,
+            maxHeight: iconSize,
+          }}
+          strokeWidth={iconStrokeWidth}
+          color={colorIcon}
+        />
       )}
 
       <ReactInputMask

@@ -1,7 +1,7 @@
 import { useActionData } from "@remix-run/react";
 import { motion } from "framer-motion";
 import { ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { Text } from "../Text";
 import { useFormController } from "../Form/FormController";
@@ -45,6 +45,7 @@ export function Select(props: SelectProps) {
   const [searchValue, setSearchValue] = useState("");
 
   const { id: inputId, inputRef } = useFormController();
+  const ref = useRef<HTMLInputElement>(null);
 
   const actionData = useActionData<any>();
   const borderError = isFocused
@@ -60,7 +61,10 @@ export function Select(props: SelectProps) {
     : iconColor;
 
   function handleFocus() {
-    if (inputRef?.current) inputRef.current.focus();
+    if (ref?.current) {
+      if (!isFocused) ref.current.focus();
+      if (isFocused) ref.current.blur();
+    }
   }
 
   function itemExists(value: string | number) {
@@ -82,7 +86,6 @@ export function Select(props: SelectProps) {
       }}
     >
       <div
-        onClick={handleFocus}
         className={styles.group({ radii, size, space, spacing, variant })}
         style={{
           borderColor: borderError ? "transparent" : undefined,
@@ -100,7 +103,7 @@ export function Select(props: SelectProps) {
         )}
 
         <input
-          ref={inputRef}
+          ref={ref}
           onFocus={() => setIsFocused(true)}
           readOnly={!isSearchable}
           onBlur={() => {
@@ -134,6 +137,7 @@ export function Select(props: SelectProps) {
         <input ref={inputRef} type="hidden" name={name} value={selectValue} />
 
         <motion.div
+          onClick={handleFocus}
           style={{ display: "flex", alignItems: "center" }}
           initial={{ rotate: 0 }}
           animate={{ rotate: isFocused ? 180 : 0 }}
@@ -181,8 +185,8 @@ export function Select(props: SelectProps) {
                       : "1px solid var(--slate-300)",
                 }}
                 onClick={() => {
-                  setSelectValue(String(option.value));
-                  onSelected(String(option.value));
+                  setSelectValue && setSelectValue(String(option?.value));
+                  onSelected && onSelected(String(option?.value));
                 }}
                 key={option.label + option.value + index}
               >
