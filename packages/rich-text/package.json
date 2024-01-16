@@ -1,6 +1,6 @@
 {
   "name": "arkyn_rich_text",
-  "version": "1.1.13",
+  "version": "1.1.18",
   "main": "./dist/bundle.js",
   "types": "./dist/src/index.d.ts",
   "author": "Lucas Gonçalves",
@@ -16,15 +16,18 @@
     "react-dom": ">=18.2.0"
   },
   "dependencies": {
+    "arkyn_components": "*",
+    "ckeditor4-react": "^5.0.0",
+    "katex": "^0.16.9",
     "lucide-react": ">=0.292.0",
     "slate": "^0.101.1",
     "slate-hyperscript": "^0.100.0",
     "slate-react": "^0.101.1",
     "suneditor": "^2.45.1",
-    "suneditor-react": "^3.6.1",
-    "arkyn_components": "*"
+    "suneditor-react": "^3.6.1"
   },
   "devDependencies": {
+    "@types/katex": "^0.16.7",
     "@types/node": "^20.9.4",
     "@types/react": "^18.2.38",
     "@types/react-color": "^3.0.10",

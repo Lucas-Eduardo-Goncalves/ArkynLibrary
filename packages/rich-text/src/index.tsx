@@ -1,4 +1,5 @@
-import { type FC, useState } from "react";
+import { useState } from "react";
+import katex from "katex";
 import SunEditor from "suneditor-react";
 import { SunEditorReactProps } from "suneditor-react/dist/types/SunEditorReactProps";
 
@@ -16,6 +17,7 @@ export function RichText(args: RichTextProps) {
         setContents={value}
         onChange={setValue}
         setOptions={{
+          katex: katex,
           buttonList: [
             ["undo", "redo"],
             ["formatBlock"],
@@ -30,7 +32,7 @@ export function RichText(args: RichTextProps) {
             ["fontColor", "hiliteColor"],
             ["align", "list"],
             ["outdent", "indent"],
-            ["table", "horizontalRule", "link", "image", "video"],
+            ["table", "horizontalRule", "link", "image", "video", "math"],
           ],
           defaultTag: "div",
           minHeight: "300px",
