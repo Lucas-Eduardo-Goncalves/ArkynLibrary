@@ -46,5 +46,7 @@ export function ArkynProvider(props) {
             multiline,
             fireToast,
             pagination,
-        }, children: [_jsx(Toaster, { position: "top-right", toastOptions: { style: { zIndex: 9999, borderRadius: "4px" } } }), children] }));
+        }, children: [_jsx(Toaster, { position: "top-right", toastOptions: {
+                    style: { zIndex: 99999999999999999999999999, borderRadius: "4px" },
+                } }), children] }));
 }

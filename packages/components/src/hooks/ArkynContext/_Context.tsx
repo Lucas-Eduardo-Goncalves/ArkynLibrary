@@ -68,7 +68,9 @@ export function ArkynProvider(props: ProviderProps) {
     >
       <Toaster
         position="top-right"
-        toastOptions={{ style: { zIndex: 9999, borderRadius: "4px" } }}
+        toastOptions={{
+          style: { zIndex: 99999999999999999999999999, borderRadius: "4px" },
+        }}
       />
 
       {children}
