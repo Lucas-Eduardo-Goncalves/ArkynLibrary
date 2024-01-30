@@ -3,6 +3,7 @@ import katex from "katex";
 import SunEditor from "suneditor-react";
 import { SunEditorReactProps } from "suneditor-react/dist/types/SunEditorReactProps";
 
+import "katex/dist/katex.css";
 type RichTextProps = Partial<SunEditorReactProps> & {};
 
 export function RichText(args: RichTextProps) {

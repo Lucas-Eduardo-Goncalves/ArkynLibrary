@@ -10,6 +10,7 @@ export { Form } from "./Form";
 export { ImageUploader } from "./ImageUploader";
 export { Input } from "./Input";
 export { MaskedInput } from "./MaskedInput";
+export { MultiSelect } from "./MultiSelect";
 export { Multiline } from "./Multiline";
 export { Select } from "./Select";
 export { Switch } from "./Switch";

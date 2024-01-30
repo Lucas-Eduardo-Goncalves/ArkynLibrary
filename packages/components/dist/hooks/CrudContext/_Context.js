@@ -22,7 +22,7 @@ export function CrudProvider(props) {
                 message: message,
             });
             return () => {
-                toast.remove(myToast);
+                toast?.remove(myToast);
             };
         }
     }, [loaderData?.message]);

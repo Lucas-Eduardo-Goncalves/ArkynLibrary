@@ -32,7 +32,7 @@ export function CrudProvider(props: ProviderProps) {
       });
 
       return () => {
-        toast.remove(myToast);
+        toast?.remove(myToast);
       };
     }
   }, [loaderData?.message]);

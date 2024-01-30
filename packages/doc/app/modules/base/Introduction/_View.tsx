@@ -1,11 +1,27 @@
-import { Select } from "arkyn_components";
+import { Icons, MultiSelect } from "arkyn_components";
 
 export function View() {
   return (
     <>
       <h1>Arkyn</h1>
 
-      <Select options={[{ label: "1", value: "1" }]} />
+      <div style={{ width: "300px" }}>
+        <MultiSelect
+          icon={Icons.AArrowDown}
+          defaultValue={[1, 2, 3]}
+          options={[
+            { label: "1", value: "1" },
+            { label: "2", value: "2" },
+            { label: "3", value: "3" },
+            { label: "4", value: "4" },
+            { label: "5", value: "5" },
+            { label: "6", value: "6" },
+            { label: "7", value: "7" },
+            { label: "8", value: "8" },
+            { label: "9", value: "9" },
+          ]}
+        />
+      </div>
 
       <p>
         Arkyn é um conjunto de bibliotecas elaborado com o propósito específico

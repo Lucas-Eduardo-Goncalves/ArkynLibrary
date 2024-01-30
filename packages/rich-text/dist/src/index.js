@@ -2,6 +2,7 @@ import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-run
 import { useState } from "react";
 import katex from "katex";
 import SunEditor from "suneditor-react";
+import "katex/dist/katex.css";
 export function RichText(args) {
     const { name, defaultValue, ...rest } = args;
     const [value, setValue] = useState(defaultValue || "");

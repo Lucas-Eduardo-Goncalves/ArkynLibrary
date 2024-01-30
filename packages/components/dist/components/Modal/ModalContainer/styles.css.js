@@ -6,7 +6,7 @@ export const container = style({
     left: 0,
     right: 0,
     bottom: 0,
-    zIndex: 99999,
+    zIndex: 9997,
     display: "flex",
     alignItems: "start",
     justifyContent: "center",
@@ -18,7 +18,7 @@ export const content = recipe({
         background: "var(--slate-50)",
         width: "max-content",
         height: "max-content",
-        zIndex: 99999,
+        zIndex: 9998,
     },
     variants: {
         radii: {
@@ -41,6 +41,6 @@ export const overlay = style({
     right: 0,
     bottom: 0,
     background: "rgba(0, 0, 0, 0.6)",
-    zIndex: 99998,
+    zIndex: 9997,
     ":hover": { cursor: "pointer" },
 });
