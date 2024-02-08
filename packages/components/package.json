@@ -19,20 +19,20 @@
     "arkyn_tokens": "*"
   },
   "devDependencies": {
-    "@types/node": "^20.11.5",
-    "@types/react": "^18.2.48",
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.55",
     "@types/react-color": "^3.0.11",
-    "@types/react-dom": "^18.2.18",
+    "@types/react-dom": "^18.2.19",
     "@types/react-input-mask": "^3.0.5",
-    "@vanilla-extract/css": "^1.14.0",
+    "@vanilla-extract/css": "^1.14.1",
     "@vanilla-extract/recipes": "^0.5.1",
-    "@vanilla-extract/vite-plugin": "^3.9.3",
-    "framer-motion": "^10.18.0",
-    "lucide-react": ">=0.311.0",
+    "@vanilla-extract/vite-plugin": "^4.0.3",
+    "framer-motion": "^11.0.3",
+    "lucide-react": ">=0.323.0",
     "react-color": "^2.19.3",
     "react-hot-toast": "^2.4.1",
     "react-input-mask": "^2.0.4",
     "typescript": "^5.3.3",
-    "vite": "^5.0.11"
+    "vite": "^5.1.0"
   }
 }
