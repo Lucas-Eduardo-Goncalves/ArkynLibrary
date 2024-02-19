@@ -1,11 +1,12 @@
 import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-runtime";
 import { useRef, useState } from "react";
 import { useArkyn } from "../../hooks";
-import { container } from "./styles.css";
-import { container as button_container } from "../Button/styles.css";
-import { Icons } from "../..";
+import { Form as ArkynForm } from "../Form";
 import { Form, useActionData } from "@remix-run/react";
+import { Icons } from "../..";
+import { container as button_container } from "../Button/styles.css";
 import { useFormController } from "../Form/FormController";
+import { container } from "./styles.css";
 export function ImageUploader(args) {
     const { button } = useArkyn();
     const { colorScheme, bg, iconColorScheme, fontSize, fontWeight, radii, size, space, spacing, variant, responseFileName = "file_url", style, uploadUrl, ...rest } = { ...args, ...button };
@@ -14,6 +15,7 @@ export function ImageUploader(args) {
     const formRef = useRef(null);
     const [selectedImage, setSelectedImage] = useState(defaultValue || null);
     const [imageValue, setImageValue] = useState(defaultValue || null);
+    const [imageError, setImageError] = useState("");
     async function submitForcedForm(form) {
         const formData = new FormData(form);
         await fetch(form.action, {
@@ -25,8 +27,10 @@ export function ImageUploader(args) {
         })
             .then((response) => {
             setImageValue(response[responseFileName]);
-        })
-            .catch((err) => console.log(err));
+            if (!response?.success) {
+                setImageError(response?.message || "Erro ao enviar imagem");
+            }
+        });
     }
     const handleChange = (file) => {
         if (formRef.current) {
@@ -35,7 +39,7 @@ export function ImageUploader(args) {
         }
     };
     const actionData = useActionData();
-    const borderError = !actionData?.fieldErrors?.[name]
+    const borderError = !actionData?.fieldErrors?.[name] && !imageError
         ? `2px dashed ${borderColor}`
         : "2px dashed var(--red-600)";
     return (_jsxs(_Fragment, { children: [_jsx("input", { name: name, ref: inputRef, type: "hidden", readOnly: true, value: imageValue || "" }), _jsxs(Form, { method: "POST", encType: "multipart/form-data", action: uploadUrl, ref: formRef, children: [_jsx("input", { type: "file", accept: "image/*", onChange: (e) => {
@@ -70,5 +74,5 @@ export function ImageUploader(args) {
                                                     space,
                                                     spacing,
                                                     variant: "outline",
-                                                }), style: { background: bg, ...style }, ...rest, children: [_jsx(Icons.RefreshCw, { size: 16, color: `var(--${colorScheme}-500)` }), changeImageButtonText] }) }) })] }))] })] })] }));
+                                                }), style: { background: bg, ...style }, ...rest, children: [_jsx(Icons.RefreshCw, { size: 16, color: `var(--${colorScheme}-500)` }), changeImageButtonText] }) }) })] }))] }), imageError && _jsx(ArkynForm.Error, { children: imageError })] })] }));
 }

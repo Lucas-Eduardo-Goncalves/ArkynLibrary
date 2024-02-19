@@ -1,12 +1,13 @@
 import { useRef, useState } from "react";
-import type { ImageUploaderProps } from "./types";
 import { useArkyn } from "../../hooks";
+import { Form as ArkynForm } from "../Form";
+import type { ImageUploaderProps } from "./types";
 
-import { container } from "./styles.css";
-import { container as button_container } from "../Button/styles.css";
-import { Icons } from "../..";
 import { Form, useActionData } from "@remix-run/react";
+import { Icons } from "../..";
+import { container as button_container } from "../Button/styles.css";
 import { useFormController } from "../Form/FormController";
+import { container } from "./styles.css";
 
 export function ImageUploader(args: ImageUploaderProps) {
   const { button } = useArkyn();
@@ -47,6 +48,7 @@ export function ImageUploader(args: ImageUploaderProps) {
   const formRef = useRef<HTMLFormElement>(null);
   const [selectedImage, setSelectedImage] = useState(defaultValue || null);
   const [imageValue, setImageValue] = useState(defaultValue || null);
+  const [imageError, setImageError] = useState("");
 
   async function submitForcedForm(form: HTMLFormElement) {
     const formData = new FormData(form);
@@ -60,8 +62,10 @@ export function ImageUploader(args: ImageUploaderProps) {
       })
       .then((response) => {
         setImageValue(response[responseFileName]);
-      })
-      .catch((err) => console.log(err));
+        if (!response?.success) {
+          setImageError(response?.message || "Erro ao enviar imagem");
+        }
+      });
   }
 
   const handleChange = (file: File) => {
@@ -72,9 +76,10 @@ export function ImageUploader(args: ImageUploaderProps) {
   };
 
   const actionData = useActionData<any>();
-  const borderError = !actionData?.fieldErrors?.[name]
-    ? `2px dashed ${borderColor}`
-    : "2px dashed var(--red-600)";
+  const borderError =
+    !actionData?.fieldErrors?.[name] && !imageError
+      ? `2px dashed ${borderColor}`
+      : "2px dashed var(--red-600)";
 
   return (
     <>
@@ -180,6 +185,7 @@ export function ImageUploader(args: ImageUploaderProps) {
             </>
           )}
         </div>
+        {imageError && <ArkynForm.Error>{imageError}</ArkynForm.Error>}
       </Form>
     </>
   );
