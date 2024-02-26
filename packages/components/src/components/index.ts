@@ -8,6 +8,7 @@ export { Spinner } from "./Spinner";
 
 // FORM
 export { Button } from "./Button";
+export { CascadeSelect } from "./CascadeSelect";
 export { Checkbox } from "./Checkbox";
 export { ColorInput } from "./ColorInput";
 export { CurrencyInput } from "./CurrencyInput";
