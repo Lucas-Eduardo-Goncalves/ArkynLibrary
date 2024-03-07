@@ -6,9 +6,14 @@ import * as styles from "./styles.css";
 import type { TableThProps } from "./types";
 import { useScopedParams } from "../../../hooks";
 
-export function TableTh({ children, sorter, ...rest }: TableThProps) {
+export function TableTh({
+  children,
+  sorter,
+  scope = "",
+  ...rest
+}: TableThProps) {
   const navigate = useNavigate();
-  const { getParam, getScopedSearch } = useScopedParams();
+  const { getParam, getScopedSearch } = useScopedParams(scope);
   const { variant } = useTableContainer();
 
   const sorterActive = getParam("sorter");

@@ -27,6 +27,7 @@ export function ImageUploader(args) {
         })
             .then((response) => {
             setImageValue(response[responseFileName]);
+            setImageError("");
             if (!response?.success) {
                 setImageError(response?.message || "Erro ao enviar imagem");
             }

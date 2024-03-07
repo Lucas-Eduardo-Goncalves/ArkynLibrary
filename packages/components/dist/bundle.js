@@ -26886,12 +26886,17 @@ function hq({ isFirst: e, isLast: t, style: a, ...n }) {
   );
 }
 var dq = pe({ defaultClassName: "sxdqrd0", variantClassNames: { variant: { default: "sxdqrd1", card: "sxdqrd2" } }, defaultVariants: {}, compoundVariants: [] }), uq = "sxdqrd3";
-function pq({ children: e, sorter: t, ...a }) {
-  const n = uI(), { getParam: i, getScopedSearch: o } = wI(), { variant: c } = E9(), s = i("sorter"), l = t + ":asc" === s, h = t + ":desc" === s;
-  function d(u) {
-    n(o({ sorter: t + u }));
+function pq({
+  children: e,
+  sorter: t,
+  scope: a = "",
+  ...n
+}) {
+  const i = uI(), { getParam: o, getScopedSearch: c } = wI(a), { variant: s } = E9(), l = o("sorter"), h = t + ":asc" === l, d = t + ":desc" === l;
+  function u(y) {
+    i(c({ sorter: t + y }));
   }
-  return /* @__PURE__ */ C.jsx("th", { className: dq({ variant: c }), ...a, children: /* @__PURE__ */ C.jsxs("div", { className: uq, children: [
+  return /* @__PURE__ */ C.jsx("th", { className: dq({ variant: s }), ...n, children: /* @__PURE__ */ C.jsxs("div", { className: uq, children: [
     e,
     t && /* @__PURE__ */ C.jsxs(
       "span",
@@ -26904,19 +26909,19 @@ function pq({ children: e, sorter: t, ...a }) {
           /* @__PURE__ */ C.jsx(
             Ht,
             {
-              onClick: () => d(":asc"),
+              onClick: () => u(":asc"),
               size: 14,
               style: { cursor: "pointer", position: "absolute", top: "0" },
-              color: l ? "var(--table-th-chevron-color-active)" : "var(--table-th-chevron-color)"
+              color: h ? "var(--table-th-chevron-color-active)" : "var(--table-th-chevron-color)"
             }
           ),
           /* @__PURE__ */ C.jsx(
             Qn,
             {
-              onClick: () => d(":desc"),
+              onClick: () => u(":desc"),
               size: 14,
               style: { cursor: "pointer", position: "absolute", bottom: "0" },
-              color: h ? "var(--table-th-chevron-color-active)" : "var(--table-th-chevron-color)"
+              color: d ? "var(--table-th-chevron-color-active)" : "var(--table-th-chevron-color)"
             }
           )
         ]
@@ -39871,7 +39876,7 @@ function lre(e) {
       method: L.method,
       body: V
     }).then(async (H) => await H.json()).then((H) => {
-      ne(H[y]), H != null && H.success || ue((H == null ? void 0 : H.message) || "Erro ao enviar imagem");
+      ne(H[y]), ue(""), H != null && H.success || ue((H == null ? void 0 : H.message) || "Erro ao enviar imagem");
     });
   }
   const k = (L) => {

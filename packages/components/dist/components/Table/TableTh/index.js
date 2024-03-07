@@ -4,9 +4,9 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTableContainer } from "../TableContainer";
 import * as styles from "./styles.css";
 import { useScopedParams } from "../../../hooks";
-export function TableTh({ children, sorter, ...rest }) {
+export function TableTh({ children, sorter, scope = "", ...rest }) {
     const navigate = useNavigate();
-    const { getParam, getScopedSearch } = useScopedParams();
+    const { getParam, getScopedSearch } = useScopedParams(scope);
     const { variant } = useTableContainer();
     const sorterActive = getParam("sorter");
     const sorterAscActive = sorter + ":asc" === sorterActive;
