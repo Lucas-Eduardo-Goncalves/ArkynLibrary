@@ -39,9 +39,7 @@ export function Select(props: SelectProps) {
   } = props;
 
   const [isFocused, setIsFocused] = useState(false);
-  const [selectValue, setSelectValue] = useState(
-    String(value) || String(defaultValue)
-  );
+  const [selectValue, setSelectValue] = useState(String(defaultValue || ""));
   const [searchValue, setSearchValue] = useState("");
 
   const { id: inputId, inputRef } = useFormController();
@@ -120,13 +118,17 @@ export function Select(props: SelectProps) {
           value={
             isFocused
               ? searchValue || ""
-              : options.find((option) => String(option.value) === selectValue)
-                  ?.label || ""
+              : options.find(
+                  (option) =>
+                    String(option.value) === (String(value) || selectValue)
+                )?.label || ""
           }
           placeholder={
             isFocused
-              ? options.find((option) => String(option.value) === selectValue)
-                  ?.label || placeholder
+              ? options.find(
+                  (option) =>
+                    String(option.value) === (String(value) || selectValue)
+                )?.label || placeholder
               : searchValue || placeholder
           }
           id={id || inputId}
@@ -134,7 +136,12 @@ export function Select(props: SelectProps) {
           {...rest}
         />
 
-        <input ref={inputRef} type="hidden" name={name} value={selectValue} />
+        <input
+          ref={inputRef}
+          type="hidden"
+          name={name}
+          value={String(value) || selectValue}
+        />
 
         <motion.div
           onClick={handleFocus}
@@ -176,7 +183,7 @@ export function Select(props: SelectProps) {
                 className={styles.option}
                 style={{
                   background:
-                    String(option.value) === selectValue
+                    String(option.value) === (String(value) || selectValue)
                       ? "var(--slate-50)"
                       : undefined,
                   borderBottom:

@@ -14,6 +14,8 @@ export type ImageUploaderProps = Omit<
     uploadUrl: string;
     imageSize?: { w: number; h: number };
 
+    setLoading?: (loading: boolean) => void;
+
     borderColor?: string;
     defaultValue?: string;
     buttonText?: string;

@@ -41,6 +41,7 @@ export function ImageUploader(args: ImageUploaderProps) {
     iconSize = 40,
     iconColor = "var(--neutral-500)",
     defaultValue,
+    setLoading = () => {},
   } = args;
 
   const { inputRef } = useFormController();
@@ -50,8 +51,13 @@ export function ImageUploader(args: ImageUploaderProps) {
   const [imageValue, setImageValue] = useState(defaultValue || null);
   const [imageError, setImageError] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+
   async function submitForcedForm(form: HTMLFormElement) {
     const formData = new FormData(form);
+
+    setIsLoading(true);
+    setLoading(true);
 
     await fetch(form.action, {
       method: form.method,
@@ -66,6 +72,10 @@ export function ImageUploader(args: ImageUploaderProps) {
         if (!response?.success) {
           setImageError(response?.message || "Erro ao enviar imagem");
         }
+      })
+      .finally(() => {
+        setIsLoading(false);
+        setLoading(false);
       });
   }
 
@@ -175,11 +185,17 @@ export function ImageUploader(args: ImageUploaderProps) {
                     style={{ background: bg, ...style }}
                     {...rest}
                   >
-                    <Icons.RefreshCw
-                      size={16}
-                      color={`var(--${colorScheme}-500)`}
-                    />
-                    {changeImageButtonText}
+                    {isLoading && "Carregando..."}
+
+                    {!isLoading && (
+                      <>
+                        <Icons.RefreshCw
+                          size={16}
+                          color={`var(--${colorScheme}-500)`}
+                        />
+                        {changeImageButtonText}
+                      </>
+                    )}
                   </div>
                 </label>
               </div>

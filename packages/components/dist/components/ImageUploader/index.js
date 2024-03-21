@@ -10,14 +10,17 @@ import { container } from "./styles.css";
 export function ImageUploader(args) {
     const { button } = useArkyn();
     const { colorScheme, bg, iconColorScheme, fontSize, fontWeight, radii, size, space, spacing, variant, responseFileName = "file_url", style, uploadUrl, ...rest } = { ...args, ...button };
-    const { borderColor = "var(--neutral-700)", buttonText = "Selecionar Imagem", changeImageButtonText = "Alterar imagem", dragText = "Ou arraste e solte a imagem aqui", onChange = () => { }, onDrop = () => { }, imageSize = { h: 300, w: 400 }, name = "file", iconSize = 40, iconColor = "var(--neutral-500)", defaultValue, } = args;
+    const { borderColor = "var(--neutral-700)", buttonText = "Selecionar Imagem", changeImageButtonText = "Alterar imagem", dragText = "Ou arraste e solte a imagem aqui", onChange = () => { }, onDrop = () => { }, imageSize = { h: 300, w: 400 }, name = "file", iconSize = 40, iconColor = "var(--neutral-500)", defaultValue, setLoading = () => { }, } = args;
     const { inputRef } = useFormController();
     const formRef = useRef(null);
     const [selectedImage, setSelectedImage] = useState(defaultValue || null);
     const [imageValue, setImageValue] = useState(defaultValue || null);
     const [imageError, setImageError] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
     async function submitForcedForm(form) {
         const formData = new FormData(form);
+        setIsLoading(true);
+        setLoading(true);
         await fetch(form.action, {
             method: form.method,
             body: formData,
@@ -31,6 +34,10 @@ export function ImageUploader(args) {
             if (!response?.success) {
                 setImageError(response?.message || "Erro ao enviar imagem");
             }
+        })
+            .finally(() => {
+            setIsLoading(false);
+            setLoading(false);
         });
     }
     const handleChange = (file) => {
@@ -75,5 +82,5 @@ export function ImageUploader(args) {
                                                     space,
                                                     spacing,
                                                     variant: "outline",
-                                                }), style: { background: bg, ...style }, ...rest, children: [_jsx(Icons.RefreshCw, { size: 16, color: `var(--${colorScheme}-500)` }), changeImageButtonText] }) }) })] }))] }), imageError && _jsx(ArkynForm.Error, { children: imageError })] })] }));
+                                                }), style: { background: bg, ...style }, ...rest, children: [isLoading && "Carregando...", !isLoading && (_jsxs(_Fragment, { children: [_jsx(Icons.RefreshCw, { size: 16, color: `var(--${colorScheme}-500)` }), changeImageButtonText] }))] }) }) })] }))] }), imageError && _jsx(ArkynForm.Error, { children: imageError })] })] }));
 }

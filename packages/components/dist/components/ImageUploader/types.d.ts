@@ -7,6 +7,7 @@ export type ImageUploaderProps = Omit<Partial<ButtonModel>, "isLoading" | "iconS
         w: number;
         h: number;
     };
+    setLoading?: (loading: boolean) => void;
     borderColor?: string;
     defaultValue?: string;
     buttonText?: string;

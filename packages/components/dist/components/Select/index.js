@@ -9,7 +9,7 @@ import * as styles from "./styles.css";
 export function Select(props) {
     const { id, containerStyle, optionsContainerStyle, isSearchable = false, fontSize = "md", fontWeight = "regular", spacing = "sm", radii = "md", size = "md", space = "sm", variant = "default", colorScheme = "indigo", icon: Icon, options = [], value = "", defaultValue = "", placeholder, iconSize = 20, iconStrokeWidth = 2, iconColor = "var(--slate-400)", name, style, onSelected, bg, onSearch, ...rest } = props;
     const [isFocused, setIsFocused] = useState(false);
-    const [selectValue, setSelectValue] = useState(String(value) || String(defaultValue));
+    const [selectValue, setSelectValue] = useState(String(defaultValue || ""));
     const [searchValue, setSearchValue] = useState("");
     const { id: inputId, inputRef } = useFormController();
     const ref = useRef(null);
@@ -63,11 +63,9 @@ export function Select(props) {
                             onSearch && onSearch(e.target.value);
                         }, value: isFocused
                             ? searchValue || ""
-                            : options.find((option) => String(option.value) === selectValue)
-                                ?.label || "", placeholder: isFocused
-                            ? options.find((option) => String(option.value) === selectValue)
-                                ?.label || placeholder
-                            : searchValue || placeholder, id: id || inputId, className: styles.container({ fontSize, fontWeight }), ...rest }), _jsx("input", { ref: inputRef, type: "hidden", name: name, value: selectValue }), _jsx(motion.div, { onClick: handleFocus, style: { display: "flex", alignItems: "center" }, initial: { rotate: 0 }, animate: { rotate: isFocused ? 180 : 0 }, children: _jsx(ChevronUp, { style: { minWidth: "16px", minHeight: "16px" }, color: "var(--normal-color)" }) })] }), isFocused && (_jsx("ul", { style: {
+                            : options.find((option) => String(option.value) === (String(value) || selectValue))?.label || "", placeholder: isFocused
+                            ? options.find((option) => String(option.value) === (String(value) || selectValue))?.label || placeholder
+                            : searchValue || placeholder, id: id || inputId, className: styles.container({ fontSize, fontWeight }), ...rest }), _jsx("input", { ref: inputRef, type: "hidden", name: name, value: String(value) || selectValue }), _jsx(motion.div, { onClick: handleFocus, style: { display: "flex", alignItems: "center" }, initial: { rotate: 0 }, animate: { rotate: isFocused ? 180 : 0 }, children: _jsx(ChevronUp, { style: { minWidth: "16px", minHeight: "16px" }, color: "var(--normal-color)" }) })] }), isFocused && (_jsx("ul", { style: {
                     display: "flex",
                     flexDirection: "column",
                     position: "absolute",
@@ -87,7 +85,7 @@ export function Select(props) {
                     if (!itemExists(option.label))
                         return _jsx(_Fragment, {});
                     return (_jsx("div", { className: styles.option, style: {
-                            background: String(option.value) === selectValue
+                            background: String(option.value) === (String(value) || selectValue)
                                 ? "var(--slate-50)"
                                 : undefined,
                             borderBottom: index + 1 === options.length

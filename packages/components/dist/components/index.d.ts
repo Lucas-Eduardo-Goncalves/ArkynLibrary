@@ -2,6 +2,7 @@ export { Badge } from "./Badge";
 export { Divider } from "./Divider";
 export { Table } from "./Table";
 export { Spinner } from "./Spinner";
+export { DefaultFilters } from "./DefaultFilters";
 export { Button } from "./Button";
 export { CascadeSelect } from "./CascadeSelect";
 export { Checkbox } from "./Checkbox";
