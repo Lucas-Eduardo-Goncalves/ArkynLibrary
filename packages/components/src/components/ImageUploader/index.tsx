@@ -17,6 +17,7 @@ export function ImageUploader(args: ImageUploaderProps) {
     bg,
     iconColorScheme,
     fontSize,
+    changeError,
     fontWeight,
     radii,
     size,
@@ -42,6 +43,7 @@ export function ImageUploader(args: ImageUploaderProps) {
     iconColor = "var(--neutral-500)",
     defaultValue,
     setLoading = () => {},
+    isError,
   } = args;
 
   const { inputRef } = useFormController();
@@ -68,8 +70,11 @@ export function ImageUploader(args: ImageUploaderProps) {
       })
       .then((response) => {
         setImageValue(response[responseFileName]);
+        changeError && changeError("");
         setImageError("");
         if (!response?.success) {
+          changeError &&
+            changeError(response?.message || "Erro ao enviar imagem");
           setImageError(response?.message || "Erro ao enviar imagem");
         }
       })
@@ -88,9 +93,13 @@ export function ImageUploader(args: ImageUploaderProps) {
 
   const actionData = useActionData<any>();
   const borderError =
-    !actionData?.fieldErrors?.[name] && !imageError
-      ? `2px dashed ${borderColor}`
-      : "2px dashed var(--red-600)";
+    typeof isError === "undefined"
+      ? !actionData?.fieldErrors?.[name] && !imageError
+        ? `2px dashed ${borderColor}`
+        : "2px dashed var(--red-600)"
+      : isError
+      ? "2px dashed var(--red-600)"
+      : `2px dashed ${borderColor}`;
 
   return (
     <>
@@ -202,7 +211,9 @@ export function ImageUploader(args: ImageUploaderProps) {
             </>
           )}
         </div>
-        {imageError && <ArkynForm.Error>{imageError}</ArkynForm.Error>}
+        {imageError && !changeError && (
+          <ArkynForm.Error>{imageError}</ArkynForm.Error>
+        )}
       </Form>
     </>
   );

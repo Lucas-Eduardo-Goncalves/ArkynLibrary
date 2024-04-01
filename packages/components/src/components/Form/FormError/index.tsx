@@ -11,6 +11,7 @@ export function FormError(props: FormErrorProps) {
     font = "default",
     fontSize = "sm",
     fontWeight = "bold",
+    dontShowError = false,
     color = "var(--red-600)",
     style,
     ...rest
@@ -28,7 +29,7 @@ export function FormError(props: FormErrorProps) {
   const actionData = useActionData<any>();
   const errorValue = actionData?.fieldErrors?.[getName()];
 
-  if (errorValue || children) {
+  if (children) {
     return (
       <motion.strong
         transition={{ duration: 0.1, ease: "easeIn" }}
@@ -39,7 +40,23 @@ export function FormError(props: FormErrorProps) {
         style={{ color, ...style }}
         {...rest}
       >
-        {errorValue || children}
+        {children}
+      </motion.strong>
+    );
+  }
+
+  if (errorValue && !dontShowError) {
+    return (
+      <motion.strong
+        transition={{ duration: 0.1, ease: "easeIn" }}
+        initial={{ opacity: 0, transform: "translateY(-5px)", height: "0px" }}
+        animate={{ opacity: 1, transform: "translateY(0)", height: "unset" }}
+        exit={{ opacity: 0, transform: "translateY(-5px)", height: "0px" }}
+        className={container({ font, fontSize, fontWeight })}
+        style={{ color, ...style }}
+        {...rest}
+      >
+        {errorValue}
       </motion.strong>
     );
   }

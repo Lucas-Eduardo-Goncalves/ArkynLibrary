@@ -118,10 +118,11 @@ export function Select(props: SelectProps) {
           value={
             isFocused
               ? searchValue || ""
-              : options.find(
-                  (option) =>
-                    String(option.value) === (String(value) || selectValue)
-                )?.label || ""
+              : typeof value === "object"
+              ? options.find((option) => String(option.value) === selectValue)
+                  ?.label || ""
+              : options.find((option) => String(option.value) === value)
+                  ?.label || ""
           }
           placeholder={
             isFocused

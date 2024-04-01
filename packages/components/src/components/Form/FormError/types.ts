@@ -2,6 +2,7 @@ import type { HTMLMotionProps } from "framer-motion";
 
 export type FormErrorProps = Omit<HTMLMotionProps<"strong">, "className"> & {
   font?: "default" | "code";
+  dontShowError?: boolean;
   fontSize?:
     | "xxs"
     | "xs"

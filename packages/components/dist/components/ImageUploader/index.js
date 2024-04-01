@@ -9,8 +9,8 @@ import { useFormController } from "../Form/FormController";
 import { container } from "./styles.css";
 export function ImageUploader(args) {
     const { button } = useArkyn();
-    const { colorScheme, bg, iconColorScheme, fontSize, fontWeight, radii, size, space, spacing, variant, responseFileName = "file_url", style, uploadUrl, ...rest } = { ...args, ...button };
-    const { borderColor = "var(--neutral-700)", buttonText = "Selecionar Imagem", changeImageButtonText = "Alterar imagem", dragText = "Ou arraste e solte a imagem aqui", onChange = () => { }, onDrop = () => { }, imageSize = { h: 300, w: 400 }, name = "file", iconSize = 40, iconColor = "var(--neutral-500)", defaultValue, setLoading = () => { }, } = args;
+    const { colorScheme, bg, iconColorScheme, fontSize, changeError, fontWeight, radii, size, space, spacing, variant, responseFileName = "file_url", style, uploadUrl, ...rest } = { ...args, ...button };
+    const { borderColor = "var(--neutral-700)", buttonText = "Selecionar Imagem", changeImageButtonText = "Alterar imagem", dragText = "Ou arraste e solte a imagem aqui", onChange = () => { }, onDrop = () => { }, imageSize = { h: 300, w: 400 }, name = "file", iconSize = 40, iconColor = "var(--neutral-500)", defaultValue, setLoading = () => { }, isError, } = args;
     const { inputRef } = useFormController();
     const formRef = useRef(null);
     const [selectedImage, setSelectedImage] = useState(defaultValue || null);
@@ -30,8 +30,11 @@ export function ImageUploader(args) {
         })
             .then((response) => {
             setImageValue(response[responseFileName]);
+            changeError && changeError("");
             setImageError("");
             if (!response?.success) {
+                changeError &&
+                    changeError(response?.message || "Erro ao enviar imagem");
                 setImageError(response?.message || "Erro ao enviar imagem");
             }
         })
@@ -47,9 +50,13 @@ export function ImageUploader(args) {
         }
     };
     const actionData = useActionData();
-    const borderError = !actionData?.fieldErrors?.[name] && !imageError
-        ? `2px dashed ${borderColor}`
-        : "2px dashed var(--red-600)";
+    const borderError = typeof isError === "undefined"
+        ? !actionData?.fieldErrors?.[name] && !imageError
+            ? `2px dashed ${borderColor}`
+            : "2px dashed var(--red-600)"
+        : isError
+            ? "2px dashed var(--red-600)"
+            : `2px dashed ${borderColor}`;
     return (_jsxs(_Fragment, { children: [_jsx("input", { name: name, ref: inputRef, type: "hidden", readOnly: true, value: imageValue || "" }), _jsxs(Form, { method: "POST", encType: "multipart/form-data", action: uploadUrl, ref: formRef, children: [_jsx("input", { type: "file", accept: "image/*", onChange: (e) => {
                             onChange(e);
                             e.target.files && handleChange(e.target.files[0]);
@@ -82,5 +89,5 @@ export function ImageUploader(args) {
                                                     space,
                                                     spacing,
                                                     variant: "outline",
-                                                }), style: { background: bg, ...style }, ...rest, children: [isLoading && "Carregando...", !isLoading && (_jsxs(_Fragment, { children: [_jsx(Icons.RefreshCw, { size: 16, color: `var(--${colorScheme}-500)` }), changeImageButtonText] }))] }) }) })] }))] }), imageError && _jsx(ArkynForm.Error, { children: imageError })] })] }));
+                                                }), style: { background: bg, ...style }, ...rest, children: [isLoading && "Carregando...", !isLoading && (_jsxs(_Fragment, { children: [_jsx(Icons.RefreshCw, { size: 16, color: `var(--${colorScheme}-500)` }), changeImageButtonText] }))] }) }) })] }))] }), imageError && !changeError && (_jsx(ArkynForm.Error, { children: imageError }))] })] }));
 }
