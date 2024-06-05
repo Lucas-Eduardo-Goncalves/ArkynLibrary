@@ -8,12 +8,14 @@ export class InputModel {
     spacing;
     variant;
     bg;
+    isError;
     icon;
     iconSize;
     iconColor;
     iconStrokeWidth;
     constructor(defaults) {
-        const { size = "md", space = "md", spacing = "md", radii = "md", variant = "default", colorScheme = "indigo", fontSize = "md", fontWeight = "regular", iconSize = 20, iconColor = "var(--slate-400)", iconStrokeWidth = 2, } = defaults;
+        const { size = "md", space = "md", spacing = "md", radii = "md", variant = "default", colorScheme = "indigo", fontSize = "md", fontWeight = "regular", iconSize = 20, iconColor = "var(--slate-400)", iconStrokeWidth = 2, isError, } = defaults;
+        this.isError = isError;
         this.size = size;
         this.iconSize = iconSize;
         this.iconColor = iconColor;

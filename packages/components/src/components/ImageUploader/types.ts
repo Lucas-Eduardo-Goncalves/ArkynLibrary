@@ -7,15 +7,16 @@ import { ButtonModel } from "../../models";
 
 export type ImageUploaderProps = Omit<
   Partial<ButtonModel>,
-  "isLoading" | "iconSize"
+  "isLoading" | "iconSize" 
 > &
-  Omit<HTMLAttributes<HTMLDivElement>, "className" | "children"> & {
+  Omit<HTMLAttributes<HTMLDivElement>, "className" | "children" | "onChange"> & {
     name: string;
     uploadUrl: string;
     isError?: boolean | undefined;
     imageSize?: { w: number; h: number };
 
     setLoading?: (loading: boolean) => void;
+    onChange?: (e: string) => void;
 
     borderColor?: string;
     defaultValue?: string;
@@ -30,5 +31,4 @@ export type ImageUploaderProps = Omit<
     responseFileName?: string;
 
     onDrop?: (event: DragEventHandler<HTMLDivElement>) => void;
-    onChange?: (event: ChangeEventHandler<HTMLInputElement>) => void;
   };

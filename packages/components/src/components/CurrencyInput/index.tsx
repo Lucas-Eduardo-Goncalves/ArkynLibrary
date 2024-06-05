@@ -1,5 +1,5 @@
 import { useActionData } from "@remix-run/react";
-import { useState, type KeyboardEvent } from "react";
+import { useEffect, useState, type KeyboardEvent } from "react";
 
 import { useArkyn } from "../../hooks";
 import { useFormController } from "../Form/FormController";
@@ -42,6 +42,10 @@ export function CurrencyInput(props: CurrencyInputProps) {
 
   const [isFocused, setIsFocused] = useState(false);
   const [value, setValue] = useState(defaultValue || 0);
+
+  useEffect(() => {
+    onChange && onChange(value);
+  }, [value]);
 
   const { id: inputId, inputRef } = useFormController();
 

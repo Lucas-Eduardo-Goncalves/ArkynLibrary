@@ -27,6 +27,7 @@ export function ImageUploader(args: ImageUploaderProps) {
     responseFileName = "file_url",
     style,
     uploadUrl,
+    onChange = () => {},
     ...rest
   } = { ...args, ...button };
 
@@ -35,7 +36,6 @@ export function ImageUploader(args: ImageUploaderProps) {
     buttonText = "Selecionar Imagem",
     changeImageButtonText = "Alterar imagem",
     dragText = "Ou arraste e solte a imagem aqui",
-    onChange = () => {},
     onDrop = () => {},
     imageSize = { h: 300, w: 400 },
     name = "file",
@@ -69,6 +69,7 @@ export function ImageUploader(args: ImageUploaderProps) {
         return await response.json();
       })
       .then((response) => {
+        onChange(response?.[responseFileName] || "");
         setImageValue(response[responseFileName]);
         changeError && changeError("");
         setImageError("");
@@ -121,7 +122,6 @@ export function ImageUploader(args: ImageUploaderProps) {
           type="file"
           accept="image/*"
           onChange={(e) => {
-            onChange(e);
             e.target.files && handleChange(e.target.files[0]);
           }}
           style={{ display: "none" }}

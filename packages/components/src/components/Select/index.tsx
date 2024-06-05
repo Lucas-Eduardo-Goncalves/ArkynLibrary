@@ -118,7 +118,7 @@ export function Select(props: SelectProps) {
           value={
             isFocused
               ? searchValue || ""
-              : typeof value === "object"
+              : value === ""
               ? options.find((option) => String(option.value) === selectValue)
                   ?.label || ""
               : options.find((option) => String(option.value) === value)
@@ -141,7 +141,7 @@ export function Select(props: SelectProps) {
           ref={inputRef}
           type="hidden"
           name={name}
-          value={String(value) || selectValue}
+          value={value !== "" ? String(value) : selectValue}
         />
 
         <motion.div
@@ -184,7 +184,8 @@ export function Select(props: SelectProps) {
                 className={styles.option}
                 style={{
                   background:
-                    String(option.value) === (String(value) || selectValue)
+                    String(option.value) ===
+                    (value !== "" ? String(value) : selectValue)
                       ? "var(--slate-50)"
                       : undefined,
                   borderBottom:

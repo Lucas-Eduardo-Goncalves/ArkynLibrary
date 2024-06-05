@@ -20,6 +20,7 @@ export class InputModel {
   spacing: Spacing;
   variant: Variant;
   bg?: string;
+  isError?: boolean;
 
   icon?: LucideIcon;
   iconSize?: number;
@@ -39,8 +40,10 @@ export class InputModel {
       iconSize = 20,
       iconColor = "var(--slate-400)",
       iconStrokeWidth = 2,
+      isError,
     } = defaults;
 
+    this.isError = isError;
     this.size = size;
     this.iconSize = iconSize;
     this.iconColor = iconColor;

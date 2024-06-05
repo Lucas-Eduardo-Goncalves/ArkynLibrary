@@ -63,13 +63,13 @@ export function Select(props) {
                             onSearch && onSearch(e.target.value);
                         }, value: isFocused
                             ? searchValue || ""
-                            : typeof value === "object"
+                            : value === ""
                                 ? options.find((option) => String(option.value) === selectValue)
                                     ?.label || ""
                                 : options.find((option) => String(option.value) === value)
                                     ?.label || "", placeholder: isFocused
                             ? options.find((option) => String(option.value) === (String(value) || selectValue))?.label || placeholder
-                            : searchValue || placeholder, id: id || inputId, className: styles.container({ fontSize, fontWeight }), ...rest }), _jsx("input", { ref: inputRef, type: "hidden", name: name, value: String(value) || selectValue }), _jsx(motion.div, { onClick: handleFocus, style: { display: "flex", alignItems: "center" }, initial: { rotate: 0 }, animate: { rotate: isFocused ? 180 : 0 }, children: _jsx(ChevronUp, { style: { minWidth: "16px", minHeight: "16px" }, color: "var(--normal-color)" }) })] }), isFocused && (_jsx("ul", { style: {
+                            : searchValue || placeholder, id: id || inputId, className: styles.container({ fontSize, fontWeight }), ...rest }), _jsx("input", { ref: inputRef, type: "hidden", name: name, value: value !== "" ? String(value) : selectValue }), _jsx(motion.div, { onClick: handleFocus, style: { display: "flex", alignItems: "center" }, initial: { rotate: 0 }, animate: { rotate: isFocused ? 180 : 0 }, children: _jsx(ChevronUp, { style: { minWidth: "16px", minHeight: "16px" }, color: "var(--normal-color)" }) })] }), isFocused && (_jsx("ul", { style: {
                     display: "flex",
                     flexDirection: "column",
                     position: "absolute",
@@ -89,7 +89,8 @@ export function Select(props) {
                     if (!itemExists(option.label))
                         return _jsx(_Fragment, {});
                     return (_jsx("div", { className: styles.option, style: {
-                            background: String(option.value) === (String(value) || selectValue)
+                            background: String(option.value) ===
+                                (value !== "" ? String(value) : selectValue)
                                 ? "var(--slate-50)"
                                 : undefined,
                             borderBottom: index + 1 === options.length

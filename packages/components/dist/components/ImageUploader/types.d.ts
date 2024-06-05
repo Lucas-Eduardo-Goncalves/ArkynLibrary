@@ -1,6 +1,6 @@
-import type { ChangeEventHandler, DragEventHandler, HTMLAttributes } from "react";
+import type { DragEventHandler, HTMLAttributes } from "react";
 import { ButtonModel } from "../../models";
-export type ImageUploaderProps = Omit<Partial<ButtonModel>, "isLoading" | "iconSize"> & Omit<HTMLAttributes<HTMLDivElement>, "className" | "children"> & {
+export type ImageUploaderProps = Omit<Partial<ButtonModel>, "isLoading" | "iconSize"> & Omit<HTMLAttributes<HTMLDivElement>, "className" | "children" | "onChange"> & {
     name: string;
     uploadUrl: string;
     isError?: boolean | undefined;
@@ -9,6 +9,7 @@ export type ImageUploaderProps = Omit<Partial<ButtonModel>, "isLoading" | "iconS
         h: number;
     };
     setLoading?: (loading: boolean) => void;
+    onChange?: (e: string) => void;
     borderColor?: string;
     defaultValue?: string;
     buttonText?: string;
@@ -19,6 +20,5 @@ export type ImageUploaderProps = Omit<Partial<ButtonModel>, "isLoading" | "iconS
     iconColor?: string;
     responseFileName?: string;
     onDrop?: (event: DragEventHandler<HTMLDivElement>) => void;
-    onChange?: (event: ChangeEventHandler<HTMLInputElement>) => void;
 };
 //# sourceMappingURL=types.d.ts.map

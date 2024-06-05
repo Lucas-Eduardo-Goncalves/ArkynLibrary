@@ -10,6 +10,7 @@ export declare class InputModel {
     spacing: Spacing;
     variant: Variant;
     bg?: string;
+    isError?: boolean;
     icon?: LucideIcon;
     iconSize?: number;
     iconColor?: string;
